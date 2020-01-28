@@ -1,0 +1,30 @@
+{
+  "1":{
+    "title": "Darkness",
+    "date": "some date",
+    "image_url": "not used",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis, lectus magna fringiLorem ipsum  ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis, lectus magna fringilla urna, porttitor",
+    "price": 3
+  },
+  "2":{
+    "title": "Freedom",
+    "date": "some date2",
+    "image_url": "not used",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis, lectus magna fringiLorem ipsum  ipsum dolor sit amet, consectetur adipiscing elitt amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis, lectus magna fringiLorem ipsum  ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis, lectus magna fringilla urna, porttitor",
+    "price": 2.9999
+  },
+  "3":{
+    "title": "Rage Vector art",
+    "date": "some date3",
+    "image_url": "not used",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit ut ipsum  ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis, lectus magna fringilla urna, porttitor",
+    "price": 24
+  },
+  "4":{
+    "title": "Sacred Geometry",
+    "date": "some date2",
+    "image_url": "not used",
+    "description": "Lorem ipsum dolor sit amet, consectecing elit ut aliquam, purus sit amet luctus venenatis, lectus magna fringilla urna, porttitor",
+    "price": 2405.30
+  }
+}
