@@ -3,7 +3,7 @@ import React from 'react'
 export const ActionButton = (props) => {
   return (
     <>
-    <button>{props.children || 'Order Now'}</button>
+    <button onClick={props.onClick}>{props.children || 'Order Now'}</button>
     </>
   )
 }
