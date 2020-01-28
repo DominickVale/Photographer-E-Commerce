@@ -8,7 +8,7 @@ import ProductDate from './ProductDate'
 import ProductImage from './ProductImage'
 import ProductDescription from './ProductDescription'
 
-const ProductShowcase = ({id, title, date, description}) => {
+const ProductShowcase = ({title, date, description}) => {
   const router = useRouter()
 
   return (
@@ -17,7 +17,7 @@ const ProductShowcase = ({id, title, date, description}) => {
       <ProductImage/>
       <ProductDate date={date} caption="lorem ipsum"/>
       <ProductDescription>{description}</ProductDescription>
-      <ActionButton onClick={() => router.push(`/product/[id]?pid=${id}`, `/product/${title.split(' ').join('-')}`)}>Check out</ActionButton>
+      <ActionButton onClick={() => router.push(`/product/[id]`, `/product/${title.split(' ').join('-')}`)}>Check out</ActionButton>
     </>
   )
 }

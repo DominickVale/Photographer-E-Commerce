@@ -13,8 +13,8 @@ const Home = () => (
       <link rel="icon" href="/favicon.ico" />
     </Head>
     <Layout>
-      {Object.keys(products).map(id => (
-        <ProductShowcase id={id} title={products[id].title} date={products[id].date} description={products[id].description} key={id}/>
+      {Object.keys(products).map(title => (
+        <ProductShowcase title={title} date={products[title].date} description={products[title].description} key={title}/>
       ))}
     </Layout>
   </>
