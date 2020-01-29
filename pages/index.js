@@ -3,10 +3,17 @@ import Head from 'next/head'
 
 import Layout from '../components/layout'
 import ProductShowcase from '../components/product/ProductShowcase'
+//import {useCart, useCartDispatch} from '../components/Store'
 
 import products from './api/products.json'
+//import { addCartItem, removeCartItem } from '../actions'
 
-const Home = () => (
+
+const Home = () => {
+/*   const carts = useCart()
+  const dispatch = useCartDispatch() */
+
+  return (
   <>
     <Head>
       <title>Home</title>
@@ -18,6 +25,6 @@ const Home = () => (
       ))}
     </Layout>
   </>
-)
+)}
 
 export default Home
