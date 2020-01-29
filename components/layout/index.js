@@ -6,6 +6,10 @@ import Header from './Header'
 import Footer from './Footer'
 
 const GlobalStyle = createGlobalStyle`
+  body{
+    font-family: 'Roboto'
+  }
+
   a{
     text-decoration: none;
   }
