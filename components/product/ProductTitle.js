@@ -1,9 +1,11 @@
 import React from 'react'
 
+import {StyledProductTitle} from 'styles/productShowcase'
+
 const ProductTitle = (props) => {
   return (
     <>
-    <h1>{props.children}</h1>
+    <StyledProductTitle>{props.children}</StyledProductTitle>
     </>
   )
 }

@@ -5,6 +5,8 @@ import {createGlobalStyle} from 'styled-components'
 import Header from './Header'
 import Footer from './Footer'
 
+import {Container} from 'styles/layout'
+
 const GlobalStyle = createGlobalStyle`
   body{
     font-family: 'Roboto'
@@ -21,7 +23,9 @@ const Layout = (props) => {
       <GlobalStyle />
       <Normalize />
       <Header />
-      {props.children}
+      <Container>
+        {props.children}
+      </Container>
       <Footer />
     </div>
   )

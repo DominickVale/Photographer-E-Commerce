@@ -1,10 +1,13 @@
 import React from 'react'
 
+import {StyledProductImage, StyledImageContainer} from 'styles/productShowcase'
+
 const ProductImage = (props) => {
   return (
-    <>
-    <img src={props.src}/>
-    </>
+    <StyledImageContainer>
+      <StyledProductImage src={props.src} />
+      {props.children}
+    </StyledImageContainer>
   )
 }
 

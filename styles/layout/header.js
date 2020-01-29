@@ -5,8 +5,9 @@ import Link from 'components/Link'
 export const NavContainer = styled.div`
   display: flex;
   flex-direction: row;
-  margin: 2vh 4vw;
+  margin: 1vh 4vw;
   justify-content: space-between;
+  align-items: center;
 `
 
 export const NavBrand = styled(Link)`
