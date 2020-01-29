@@ -1,5 +1,5 @@
 import React,{createContext, useContext, useReducer, useEffect, useRef} from 'react'
-import { CART_ADD_ITEM, CART_REMOVE_ITEM } from "../actions"
+import { CART_ADD_ITEM, CART_REMOVE_ITEM } from "actions"
 
 
 const _initialCartState = []

@@ -1,8 +1,8 @@
 import React from 'react'
 import Head from 'next/head'
 
-import Layout from '../components/layout'
-import ProductShowcase from '../components/product/ProductShowcase'
+import Layout from 'components/layout'
+import ProductShowcase from 'components/product/ProductShowcase'
 //import {useCart, useCartDispatch} from '../components/Store'
 
 import products from './api/products.json'

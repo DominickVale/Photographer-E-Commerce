@@ -2,13 +2,13 @@ import React from 'react'
 import fetch from 'isomorphic-unfetch'
 import {useRouter} from 'next/router'
 
-import Layout from '../../components/layout'
+import Layout from 'components/layout'
 
-import ProductTitle from '../../components/product/ProductTitle'
-import ProductDate from '../../components/product/ProductDate'
-import ProductImage from '../../components/product/ProductImage'
-import ProductDescription from '../../components/product/ProductDescription'
-import ProductCheckout from '../../components/product/ProductCheckout'
+import ProductTitle from 'components/product/ProductTitle'
+import ProductDate from 'components/product/ProductDate'
+import ProductImage from 'components/product/ProductImage'
+import ProductDescription from 'components/product/ProductDescription'
+import ProductCheckout from 'components/product/ProductCheckout'
 
 import products from '../api/products.json'
 

@@ -1,7 +1,7 @@
 import React from 'react'
 import App from 'next/app'
 
-import {CartProvider} from '../components/Store'
+import {CartProvider} from 'components/Store'
 
 const MyApp = ({Component, pageProps}) => 
   (

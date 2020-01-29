@@ -1,6 +1,6 @@
 import React from 'react'
 
-import {NavBrand} from '../../styles/layout/header'
+import {NavBrand} from 'styles/layout/header'
 import ContactDetailsList from '../ContactDetailsList'
 
 const Footer = () => {
