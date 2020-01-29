@@ -7,6 +7,7 @@ module.exports = {
       use: ['@svgr/webpack'],
     });
     config.resolve.modules.push(path.resolve('./'))
+    config.resolve.alias['api'] = path.join(__dirname, './pages/api')
     return config;
   }
 };
