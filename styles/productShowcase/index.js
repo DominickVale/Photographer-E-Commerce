@@ -51,7 +51,7 @@ top: 50%;
 right: -6.3rem;
 `
 
-export const StyledProductDescription = styled.p`
+export const StyledProductDescription = styled.span`
 text-align: center;
 max-width: 30rem;
 margin: auto;
@@ -61,7 +61,4 @@ export const StyledReadMore = styled.span`
 display: inline;
 text-decoration: none;
 color: ${variables.linkColor};
-  a:visited{
-    color: inherit;
-  };
 `

@@ -6,5 +6,9 @@ export default {
   logoFontSize: '18px',
   linkColor: '#262626',
   productTitleColor: '#262626',
-  productTitleSize: 'calc(14vw + 1vh)'
+  productTitleSize: 'calc(14vw + 1vh)',
+  footerBg: '#141414',
+  footerFontColor: '#B5B5B5',
+  footerFontHighlightColor: '#E4E4E4',
+  footerLogoFontColor: '#5A5A5A',
 }

@@ -1,14 +1,21 @@
 import React from 'react'
 
+import {ContactsContainer,ContactsLabelContainer, ContactsDetailsContainer, ContactsItem, ContactsLabel } from 'styles/layout/footer'
+
 const ContactDetailsList = () => {
   return (
-    <address>
-      <ul>
-        <li><span>Address</span><span>Lorem ipsum dolor sit amet</span></li>
-        <li><span>Phone</span><span>555-555-555</span></li>
-        <li><span>Details</span><span>Lorem ipsum dolor sit aem ipsum dolor sit aem ipsum dolor sit amet</span></li>
-      </ul>
-    </address>
+    <ContactsContainer>
+      <ContactsLabelContainer>
+        <ContactsLabel>Address</ContactsLabel>
+        <ContactsLabel>Phone</ContactsLabel>
+        <ContactsLabel>Details</ContactsLabel>
+      </ContactsLabelContainer>
+      <ContactsDetailsContainer>
+        <ContactsItem>Lorem ipsum dolor sit amet</ContactsItem>
+        <ContactsItem>555-555-555</ContactsItem>
+        <ContactsItem>Lorem ipsum dolor sit aem ipsum dolor sit aem ipsum dolor sit amet</ContactsItem>
+      </ContactsDetailsContainer>
+    </ContactsContainer>
   )
 }
 

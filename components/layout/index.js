@@ -15,6 +15,15 @@ const GlobalStyle = createGlobalStyle`
 
   a{
     text-decoration: none;
+    &:visited{
+      color: inherit;
+    }
+  }
+
+  li{
+    text-decoration: none;
+    font-style: normal;
+    list-style: none;
   }
 `
 

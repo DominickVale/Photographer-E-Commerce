@@ -1,6 +1,6 @@
 import styled from 'styled-components'
-
 import Link from 'components/Link'
+
 
 export const NavContainer = styled.div`
   display: flex;
@@ -17,5 +17,5 @@ export const NavBrand = styled(Link)`
 `
 
 export const NavHamContainer = styled.div`
-  width: 100%
+  width: 100%;
 `
