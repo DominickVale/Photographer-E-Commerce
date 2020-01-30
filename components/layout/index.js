@@ -9,7 +9,8 @@ import {Container} from 'styles/layout'
 
 const GlobalStyle = createGlobalStyle`
   body{
-    font-family: 'Roboto'
+    font-family: 'Roboto';
+    background-color: white;
   }
 
   a{
