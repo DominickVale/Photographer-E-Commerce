@@ -81,5 +81,6 @@ ${props => props.styleProduct && css`
 export const StyledReadMore = styled.span`
 display: inline;
 text-decoration: none;
+font-weight: 900;
 color: ${variables.linkColor};
 `

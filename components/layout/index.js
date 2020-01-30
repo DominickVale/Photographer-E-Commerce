@@ -10,6 +10,7 @@ import {Container} from 'styles/layout'
 const GlobalStyle = createGlobalStyle`
   body{
     font-family: 'Roboto';
+    font-weight: 300;
     background-color: white;
   }
 

@@ -8,7 +8,7 @@ const MyApp = ({Component, pageProps}) =>
   (
     <>
     <Head>
-      <link href="https://fonts.googleapis.com/css?family=Roboto:300,900&display=swap" rel="stylesheet" />
+      <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,900&display=swap" rel="stylesheet" />
     </Head>
     <CartProvider>
       <Component {...pageProps}/>
