@@ -1,8 +1,14 @@
 import styled,{css} from 'styled-components'
 
 export const Filler = styled.div`
-height: ${props => props.height};
-width: ${props => props.width || '10vw'};
+  height: ${props => props.height};
+  width: ${props => props.width || '10vw'};
+
+  ${props => props.hideDesktop && css`
+    @media only screen and (min-width: 720px) {
+        display: none;
+      }
+    `};
 `
 
 export const ActionButtonWrapper = styled.div`
