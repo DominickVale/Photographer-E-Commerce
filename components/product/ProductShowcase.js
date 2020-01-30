@@ -9,15 +9,16 @@ import ProductImage from './ProductImage'
 import ProductDescription from './ProductDescription'
 import {ProductWrapper} from 'styles/productShowcase'
 
-const ProductShowcase = ({title, date, description}) => {
+const ProductShowcase = ({title, date, shortDescription}) => {
   const router = useRouter()
-
+  const URL = `/product/[id]`
+  const asURL = `/product/${title.split(' ').join('-')}`
   return (
     <ProductWrapper>
       <ProductTitle>{title}</ProductTitle>
-      <ProductImage src="test1.jpg"><ProductDate date={date} caption="lorem ipsum"/></ProductImage>
-      <ProductDescription>{description}</ProductDescription>
-      <ActionButton onClick={() => router.push(`/product/[id]`, `/product/${title.split(' ').join('-')}`)}>Check out</ActionButton>
+      <ProductImage src="test2.jpg"><ProductDate date={date} caption="lorem ipsum"/></ProductImage>
+      <ProductDescription readMoreLink={{URL, asURL}}>{shortDescription}</ProductDescription>
+      <ActionButton onClick={() => router.push(URL, asURL)}>Check out</ActionButton>
     </ProductWrapper>
   )
 }

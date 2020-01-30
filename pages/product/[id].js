@@ -20,7 +20,7 @@ const Product = ({imageUrl, title, description, date, price}) => {
         <ProductTitle>{title}</ProductTitle>
         <ProductImage src={imageUrl}/>
         <ProductDate date={date} caption="lorem ipsum"/>
-        <ProductDescription />
+        <ProductDescription>{description}</ ProductDescription>
         <ProductCheckout />
       </Layout>
     </>

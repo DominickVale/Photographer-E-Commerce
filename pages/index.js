@@ -5,7 +5,7 @@ import Layout from 'components/layout'
 import ProductShowcase from 'components/product/ProductShowcase'
 //import {useCart, useCartDispatch} from '../components/Store'
 
-import products from './api/products.json'
+import products from 'api/products.json'
 //import { addCartItem, removeCartItem } from '../actions'
 
 
@@ -21,7 +21,13 @@ const Home = () => {
     </Head>
     <Layout>
       {Object.keys(products).map(title => (
-        <ProductShowcase title={title} date={products[title].date} description={products[title].description} key={title}/>
+        <ProductShowcase
+          title={title}
+          date={products[title].date}
+          description={products[title].description}
+          shortDescription={products[title].short_description}
+          key={title}
+          />
       ))}
     </Layout>
   </>
