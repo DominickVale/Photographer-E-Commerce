@@ -5,7 +5,7 @@ import {StyledProductTitle} from 'styles/productShowcase'
 const ProductTitle = (props) => {
   return (
     <>
-    <StyledProductTitle>{props.children}</StyledProductTitle>
+    <StyledProductTitle styleProduct={props.styleProduct}>{props.children}</StyledProductTitle>
     </>
   )
 }

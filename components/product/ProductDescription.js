@@ -3,11 +3,11 @@ import Link from '../Link'
 
 import {StyledProductDescription, StyledReadMore} from 'styles/productShowcase'
 
-const ProductDescription = ({children, readMoreLink}) => {
+const ProductDescription = ({children, readMoreLink, styleProduct}) => {
 
   return (
     <>
-    <StyledProductDescription>
+    <StyledProductDescription styleProduct={styleProduct}>
       <p>{children || 'Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam'}
       {readMoreLink && (
       <StyledReadMore>

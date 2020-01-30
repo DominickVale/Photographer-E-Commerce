@@ -1,11 +1,14 @@
 import React from 'react'
 
-import {StyledActionButton} from 'styles'
+import {ActionButtonWrapper, StyledActionButton, ActionButtonLabel} from 'styles'
+
+
 export const ActionButton = (props) => {
   return (
-    <>
-    <StyledActionButton onClick={props.onClick}>{props.children || 'Order Now'}</StyledActionButton>
-    </>
+    <ActionButtonWrapper>
+      <StyledActionButton styleProduct={props.styleProduct} onClick={props.onClick}>{props.children || 'Order Now'}</StyledActionButton>
+      {props.styleProduct && (<ActionButtonLabel>Fast delivery in 24 hours</ActionButtonLabel>)}
+    </ActionButtonWrapper>
   )
 }
 

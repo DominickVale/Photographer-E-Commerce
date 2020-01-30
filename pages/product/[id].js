@@ -4,6 +4,7 @@ import {useRouter} from 'next/router'
 
 import Layout from 'components/layout'
 
+import {ProductWrapper} from 'styles/product'
 import ProductTitle from 'components/product/ProductTitle'
 import ProductDate from 'components/product/ProductDate'
 import ProductImage from 'components/product/ProductImage'
@@ -15,15 +16,15 @@ import products from '../api/products.json'
 const Product = ({imageUrl, title, description, date, price}) => {
   console.log(title, ' : ', title.split('-').join(' '))
   return (
-    <>
       <Layout>
-        <ProductTitle>{title}</ProductTitle>
-        <ProductImage src={imageUrl}/>
-        <ProductDate date={date} caption="lorem ipsum"/>
-        <ProductDescription>{description}</ ProductDescription>
-        <ProductCheckout />
+        <ProductWrapper>
+          <ProductTitle styleProduct>{title}</ProductTitle>
+          <ProductImage src={imageUrl}/>
+          <ProductDate styleProduct date={date} caption="lorem ipsum"/>
+          <ProductDescription styleProduct>{description}</ ProductDescription>
+          <ProductCheckout price={price}/>
+        </ProductWrapper>
       </Layout>
-    </>
   )
 }
 
