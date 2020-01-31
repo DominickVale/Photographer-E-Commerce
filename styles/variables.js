@@ -1,5 +1,6 @@
 export default {
   contentMarginHorizontal: '33px',
+  contentMarginHorizontalDesktop: '8vw',
   baseFontSize: '16px',
   baseFontColor: '#292929',
   logoFontColor: '#444444',

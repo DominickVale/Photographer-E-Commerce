@@ -19,7 +19,7 @@ const Product = ({imageUrl, title, description, date, price}) => {
       <Layout>
         <ProductWrapper>
           <ProductTitle styleProduct>{title}</ProductTitle>
-          <ProductImage src={imageUrl}/>
+          <ProductImage styleProduct src={imageUrl}/>
           <ProductDate styleProduct date={date} caption="lorem ipsum"/>
           <ProductDescription styleProduct>{description}</ ProductDescription>
           <ProductCheckout price={price}/>

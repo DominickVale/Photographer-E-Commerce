@@ -9,8 +9,8 @@ justify-content: space-between;
 align-items: center;
 align-content: space-between;
 position: relative;
-margin: 10vh 0 20vh 0;
-max-height: 70vh;
+margin: 20vh 0 40vh 0;
+max-height: 80vh;
 @media only screen and (min-width: 1140px){
   margin: 10vh 0 20vh auto;
   display: grid;
@@ -62,12 +62,18 @@ ${props => props.styleProduct && css`
 
 export const StyledImageContainer = styled.figure`
 grid-area: image;
-max-height: 50vh;
+max-height: 70vh;
 max-width: 100%;
 margin: auto;
 display: flex;
 justify-content: center;
 position: relative;
+@media only screen and (min-width: 1140px) {
+  max-width: 40vw;
+  ${props => props.styleProduct && css`
+  max-width: 60vw;
+`}
+}
 `
 
 export const StyledProductImage = styled.img`
@@ -88,17 +94,6 @@ transform: rotate(90deg);
 position: absolute;
 top: 36%;
 right: -6.3rem;
-${props => props.styleProduct && css`
-  position: relative;
-  top: 0;
-  left: 0;
-  margin: 1rem 0 0 0;
-  transform: rotate(0);
-  max-width: 10rem;
-`}
-& strong{
-  font-weight: 900;
-}
 @media only screen and (min-width: 1140px){
   align-self: center;
   position: relative;
@@ -106,22 +101,47 @@ ${props => props.styleProduct && css`
   top: -16%;
   left: -5vw;
 }
+${props => props.styleProduct && css`
+  position: relative;
+  align-self: flex-end;
+  top: 0;
+  left: 0;
+  margin: 0;
+  transform: rotate(0);
+  max-width: 10rem;
+  @media only screen and (min-width: 720px){
+    margin-top: 1.2rem;
+    right: 0;
+    top: 0;
+    left: 0;
+  }
+  @media only screen and (min-width: 1140px){
+    margin-bottom: 0rem;
+  }
+`}
+& strong{
+  font-weight: 900;
+}
 `
 
 export const StyledProductDescription = styled.span`
 grid-area: description;
+align-self: flex-start;
 text-align: center;
 max-width: 30rem;
 margin: auto;
-${props => props.styleProduct && css`
-  text-align: left;
-  margin: 0;
-`}
 @media only screen and (min-width: 1140px){
   text-align: left;
   margin: 0;
   max-width: 28rem;
 }
+${props => props.styleProduct && css`
+  text-align: left;
+  margin-top: 1.4rem;
+  p{
+    margin: 0;
+  }
+`}
 `
 
 export const StyledReadMore = styled.span`

@@ -19,7 +19,7 @@ flex-direction: column;
 align-content: center;
 margin: 0 auto;
 @media only screen and (min-width: 1140px){
-  margin: 0;  
+  margin: ${props => props.styleProduct ? 'auto': '0'};
 }
 `
 

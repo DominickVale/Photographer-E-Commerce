@@ -5,7 +5,7 @@ import {ActionButtonWrapper, StyledActionButton, ActionButtonLabel} from 'styles
 
 export const ActionButton = (props) => {
   return (
-    <ActionButtonWrapper>
+    <ActionButtonWrapper styleProduct = {props.styleProduct}>
       <StyledActionButton styleProduct={props.styleProduct} onClick={props.onClick}>{props.children || 'Order Now'}</StyledActionButton>
       {props.styleProduct && (<ActionButtonLabel>Fast delivery in 24 hours</ActionButtonLabel>)}
     </ActionButtonWrapper>
