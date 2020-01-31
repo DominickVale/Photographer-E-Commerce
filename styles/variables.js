@@ -7,6 +7,8 @@ export default {
   linkColor: '#262626',
   productTitleColor: '#262626',
   productTitleSize: 'calc(14vw + 1vh)',
+  productTitleSizeMaxMobile: '7rem',
+  productTitleSizeDesktop: 'calc(5vw + 5vh)',
   footerBg: '#141414',
   footerFontColor: '#B5B5B5',
   footerFontHighlightColor: '#E4E4E4',

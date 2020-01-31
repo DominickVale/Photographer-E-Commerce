@@ -24,7 +24,7 @@ const Footer = () => {
         <FooterLink>SHIPPING INFO</FooterLink>
       </FooterLinksRightContainer>
     </FooterLinksContainer>
-    <NavBrand href="/" dark><FooterLogo>Photo<br/>Commerce</FooterLogo></NavBrand>
+    <FooterLogo><NavBrand href="/" dark>Photo<br/>Commerce</NavBrand></FooterLogo>
    </FooterContainer>
   )
 }

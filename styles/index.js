@@ -13,10 +13,14 @@ export const Filler = styled.div`
 
 export const ActionButtonWrapper = styled.div`
 grid-area: action;
+justify-self: start;
 display: flex;
 flex-direction: column;
 align-content: center;
 margin: 0 auto;
+@media only screen and (min-width: 1140px){
+  margin: 0;  
+}
 `
 
 export const StyledActionButton = styled.button`

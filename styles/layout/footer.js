@@ -14,10 +14,20 @@ grid-template-areas:
 "contacts"
 "links"
 "footer-logo";
+@media only screen and (min-width: 1140px){
+  grid-template-areas:
+  "footer-main . ."
+  "footer-main . contacts"
+  "footer-logo footer-logo footer-logo"
+  "links . .";
+}
 `
 
 export const FooterMain = styled.section`
 grid-area: footer-main;
+& p{
+  max-width: 30rem;
+}
 `
 
 export const ContactsContainer = styled.address`
@@ -28,6 +38,7 @@ display: flex;
 flex-direction: row;
 justify-content: space-between;
 width: 100%;
+max-width: 36rem;
 `
 
 export const FooterLinksContainer = styled.ul`
@@ -38,17 +49,31 @@ flex-direction: row;
 justify-content: space-between;
 width: 100%;
 margin: 2vw 0;
+@media only screen and (min-width: 1140px){
+  max-width: 20rem;
+  align-self: flex-end;
+}
 `
 
-export const FooterLink = styled.li`
+export const FooterLogo = styled.h3`
 grid-area: footer-logo;
-margin-bottom: 1rem;
-color: ${variables.footerLogoFontColor};
+margin: 0 0 2rem 0;
+text-align: center;
+font-size: 1.4rem;
+color: ${variables.footerLogoFontColor} !important;
 font-weight: 900;
-font-size: 0.8rem;
+line-height: 0.8;
+align-self: flex-end;
+& a{
+  height: 1rem;
+}
+@media only screen and (min-width: 1140px){
+  position: relative;
+  height: 1rem;
+  margin: 0;
+  bottom: -2rem;
+}
 `
-
-
 
 
 export const FooterHeading = styled.h2`
@@ -56,6 +81,10 @@ color: ${variables.footerFontHighlightColor};
 font-size: 18vw;
 line-height: 0.8;
 margin-bottom: 2rem;
+@media only screen and (min-width: 1140px){
+  font-size: calc(10vh + 6rem);
+  max-width: 60rem;
+}
 `
 
 export const ContactsLabelContainer = styled.ul`
@@ -97,16 +126,13 @@ margin: 0;
 `
 export const FooterLinksRightContainer = styled(FooterLinksLeftContainer)`
 flex-direction: column;
-justify-content: flex-end;
 text-align: right;
 min-width: 8rem;
 `
 
-export const FooterLogo = styled.h3`
-margin: 0 0 2rem 0;
-text-align: center;
-font-size: 1.4rem;
-color: ${variables.footerLogoFontColor} !important;
+export const FooterLink = styled.li`
+margin-bottom: 1rem;
+color: ${variables.footerLogoFontColor};
 font-weight: 900;
-line-height: 0.8;
+font-size: 0.8rem;
 `

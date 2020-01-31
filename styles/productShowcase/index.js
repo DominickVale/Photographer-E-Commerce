@@ -11,10 +11,27 @@ align-content: space-between;
 position: relative;
 margin: 10vh 0 20vh 0;
 max-height: 70vh;
+@media only screen and (min-width: 1140px){
+  margin: 10vh 0 20vh auto;
+  display: grid;
+  align-content: flex-start;
+  justify-content: start;
+  align-items: flex-start;
+  grid-column-gap: 2rem;
+  grid-row-gap: 0;
+  grid-template-columns: 6fr 2fr 2fr 4rem;
+  grid-template-rows: 2fr 1fr 2fr 1fr;
+  grid-template-areas:
+  "image title title date "
+  "image description description date"
+  "image action . date"
+  "image . . date";
+}
 `
 
 export const StyledProductTitle = styled.h1`
 grid-area: title;
+line-height: 0.8;
 font-size: ${variables.productTitleSize};
 color: ${variables.productTitleColor};
 position: absolute;
@@ -29,9 +46,22 @@ ${props => props.styleProduct && css`
   left: 0;
   margin: 2rem 0 0 0;
 `}
+@media only screen and (min-width: 720px){
+  font-size: ${variables.productTitleSizeMaxMobile};
+  margin: 1rem 0 0 0;
+}
+@media only screen and (min-width: 1140px){
+  position: relative;
+  align-self: flex-end;
+  font-size: ${variables.productTitleSizeDesktop};
+  left: 0;
+  top: -1.4rem;
+  margin: 0;
+}
 `
 
 export const StyledImageContainer = styled.figure`
+grid-area: image;
 max-height: 50vh;
 max-width: 100%;
 margin: auto;
@@ -39,6 +69,7 @@ display: flex;
 justify-content: center;
 position: relative;
 `
+
 export const StyledProductImage = styled.img`
 height: auto;
 max-width: 100%;
@@ -55,7 +86,7 @@ justify-content: space-between;
 min-width: 12rem;
 transform: rotate(90deg);
 position: absolute;
-top: 50%;
+top: 36%;
 right: -6.3rem;
 ${props => props.styleProduct && css`
   position: relative;
@@ -65,6 +96,16 @@ ${props => props.styleProduct && css`
   transform: rotate(0);
   max-width: 10rem;
 `}
+& strong{
+  font-weight: 900;
+}
+@media only screen and (min-width: 1140px){
+  align-self: center;
+  position: relative;
+  height: auto;
+  top: -16%;
+  left: -5vw;
+}
 `
 
 export const StyledProductDescription = styled.span`
@@ -76,6 +117,11 @@ ${props => props.styleProduct && css`
   text-align: left;
   margin: 0;
 `}
+@media only screen and (min-width: 1140px){
+  text-align: left;
+  margin: 0;
+  max-width: 28rem;
+}
 `
 
 export const StyledReadMore = styled.span`
