@@ -17,15 +17,15 @@ max-height: 80vh;
   align-content: flex-start;
   justify-content: start;
   align-items: flex-start;
-  grid-column-gap: 2rem;
+  grid-column-gap: 0rem;
   grid-row-gap: 0;
-  grid-template-columns: 6fr 2fr 2fr 4rem;
-  grid-template-rows: 2fr 1fr 2fr 1fr;
+  grid-template-columns: 8fr 1fr 3fr 3fr 5rem;
+  grid-template-rows: 2fr 1fr 1fr 1fr;
   grid-template-areas:
-  "image title title date "
-  "image description description date"
-  "image action . date"
-  "image . . date";
+  "image . title title date"
+  "image . description description date"
+  "image . action . date"
+  "image . . . arrow";
 }
 `
 
@@ -99,24 +99,26 @@ right: -6.3rem;
   position: relative;
   height: auto;
   top: -16%;
-  left: -5vw;
+  left: -3vw;
 }
 ${props => props.styleProduct && css`
   position: relative;
-  align-self: flex-end;
-  top: 0;
-  left: 0;
+  align-self: center;
   margin: 0;
+  margin: 1.2rem auto auto auto;
   transform: rotate(0);
   max-width: 10rem;
+  right: 0;
+  top: 0;
+  left: 0;
   @media only screen and (min-width: 720px){
-    margin-top: 1.2rem;
-    right: 0;
-    top: 0;
+    align-self: flex-start;
+    margin: 1.2rem 0 0 0;
     left: 0;
   }
-  @media only screen and (min-width: 1140px){
+  @media only screen and (min-width: 980px){
     margin-bottom: 0rem;
+    left: 2vw;
   }
 `}
 & strong{
@@ -130,11 +132,6 @@ align-self: flex-start;
 text-align: center;
 max-width: 30rem;
 margin: auto;
-@media only screen and (min-width: 1140px){
-  text-align: left;
-  margin: 0;
-  max-width: 28rem;
-}
 ${props => props.styleProduct && css`
   text-align: left;
   margin-top: 1.4rem;
@@ -142,6 +139,19 @@ ${props => props.styleProduct && css`
     margin: 0;
   }
 `}
+@media only screen and (min-width: 1140px){
+  text-align: left;
+  margin: 0;
+  max-width: 28rem;
+  ${props => props.styleProduct && css`
+    text-align: left;
+    margin-top: 0rem;
+    p{
+      margin: 0;
+      margin-left: 10%;
+    }
+  `}
+}
 `
 
 export const StyledReadMore = styled.span`

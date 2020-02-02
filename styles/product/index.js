@@ -25,20 +25,20 @@ grid-template-areas:
   "description checkout"
 }
 @media only screen and (min-width: 1140px){
-  min-height: 100vh;
+  max-height: 90vh;
   max-width: 90vw;
-  margin: 10vh 0 0 auto;
+  margin: 10vh 0 20vh auto;
   align-content: flex-start;
   justify-content: start;
   align-items: flex-start;
   grid-row-gap: 1rem;
-  grid-column-gap: 2rem;
-  grid-template-columns: 2fr 1fr 2fr 2fr;
+  grid-column-gap: 0;
+  grid-template-columns: 4fr 4fr 1fr 3fr 3fr;
   grid-template-areas:
-  "image image title title"
-  "image image checkout date"
-  "image image checkout description"
-  "image image . description"
+  "image image . title title"
+  "image image . checkout date"
+  "image image . checkout description"
+  "image image . . description"
 }
 `
 
