@@ -1,17 +1,28 @@
-import React from 'react'
+import React, {useEffect, useState} from 'react'
 import Head from 'next/head'
 
 import Layout from 'components/layout'
 import ProductShowcase from 'components/product/ProductShowcase'
+import { fetchProducts } from 'api'
+import {parseDate} from 'utils'
 //import {useCart, useCartDispatch} from '../components/Store'
 
-import products from 'api/products.json'
 //import { addCartItem, removeCartItem } from '../actions'
 
-
-const Home = () => {
+const Home = (props) => {
 /*   const carts = useCart()
   const dispatch = useCartDispatch() */
+  const [productList, setProductList] = useState([])
+
+  useEffect(() => {
+    (async () => {
+      const products = await fetchProducts();
+      setProductList(products);
+      console.log('product list: ', productList)
+
+    })();
+  }, [])
+
 
   return (
   <>
@@ -20,15 +31,19 @@ const Home = () => {
       <link rel="icon" href="/favicon.ico" />
     </Head>
     <Layout>
-      {Object.keys(products).map(title => (
+      {productList.map((product)=> {
+        let {title, date, image, shortDescription} = product.fields;
+        
+        image = image.fields.file.url
+        return(
         <ProductShowcase
           title={title}
-          date={products[title].date}
-          description={products[title].description}
-          shortDescription={products[title].short_description}
+          image={image}
+          date={parseDate(date)}
+          shortDescription={shortDescription}
           key={title}
           />
-      ))}
+      )})}
     </Layout>
   </>
 )}

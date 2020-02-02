@@ -1,6 +1,4 @@
 import React from 'react'
-import fetch from 'isomorphic-unfetch'
-import {useRouter} from 'next/router'
 
 import Layout from 'components/layout'
 
@@ -10,16 +8,18 @@ import ProductDate from 'components/product/ProductDate'
 import ProductImage from 'components/product/ProductImage'
 import ProductDescription from 'components/product/ProductDescription'
 import ProductCheckout from 'components/product/ProductCheckout'
+import { parseDate } from 'utils'
+import { fetchSingleProduct } from 'api'
 
-import products from '../api/products.json'
 
-const Product = ({imageUrl, title, description, date, price}) => {
+
+const Product = ({title, image, date, description, price}) => {
   console.log(title, ' : ', title.split('-').join(' '))
   return (
       <Layout>
         <ProductWrapper>
           <ProductTitle styleProduct>{title}</ProductTitle>
-          <ProductImage styleProduct src={imageUrl}/>
+          <ProductImage styleProduct src={image}/>
           <ProductDate styleProduct date={date} caption="lorem ipsum"/>
           <ProductDescription styleProduct>{description}</ ProductDescription>
           <ProductCheckout price={price}/>
@@ -30,18 +30,15 @@ const Product = ({imageUrl, title, description, date, price}) => {
 
 Product.getInitialProps = async (context) => {
   
-  const title = context.query.id.split('-').join(' ')
-  const response = await fetch(`https://pixabay.com/api/?key=15050778-1cb9bb65272fa7b764bd21483&q=${title}`);
-  const images = await response.json();
-  
-  console.log(images)
-  const {description, date, price} = products[title]
+  console.log(' CONTEXT: ', context)
+  let {title, image, date, description, price} = await fetchSingleProduct(context.query.slug.split('-').join(' '))
+
 
   return {
-    imageUrl: images.hits[0].largeImageURL,
     title,
-    description,
-    date,
+    date: parseDate(date),
+    image: image.fields.file.url,
+    description: description.content[0].content[0].value,
     price,
   }
 }
