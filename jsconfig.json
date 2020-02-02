@@ -7,6 +7,7 @@
       "pages": ["./pages/*"],
       "styles": ["./styles/*"],
       "components": ["./components/*"],
+      "constants": ["./constants/*"],
     }
   }
 }
