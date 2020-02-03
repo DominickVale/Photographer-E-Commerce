@@ -22,6 +22,5 @@ export const fetchSingleProduct = async (slug) => {
     content_type: 'product',
     'fields.title': slug
   })
-
-  return {...entries.items[0].fields}
+  return {...entries.items[0].fields, ...entries.items[0].sys}
 }
