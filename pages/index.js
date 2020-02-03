@@ -5,13 +5,9 @@ import Layout from 'components/layout'
 import ProductShowcase from 'components/product/ProductShowcase'
 import { fetchProducts } from 'api'
 import {parseDate} from 'utils'
-//import {useCart, useCartDispatch} from '../components/Store'
 
-//import { addCartItem, removeCartItem } from '../actions'
 
 const Home = (props) => {
-/*   const carts = useCart()
-  const dispatch = useCartDispatch() */
   const [productList, setProductList] = useState([])
 
   useEffect(() => {
