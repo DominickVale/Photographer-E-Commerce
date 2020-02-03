@@ -9,7 +9,7 @@ import CartButton from './CartButton'
 import Cart from '../Cart'
 
 const Header = () => {
-  const [cartMenuShown, setCartMenuShown] = useState(true)
+  const [cartMenuShown, setCartMenuShown] = useState(false)
 
   return (
     <>
