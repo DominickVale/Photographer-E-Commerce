@@ -8,9 +8,9 @@ export const addCartItem = item => {
   })
 }
 
-export const removeCartItem = item => {
+export const removeCartItem = itemId => {
   return({
     type: CART_REMOVE_ITEM,
-    payload: item
+    payload: itemId
   })
 }
