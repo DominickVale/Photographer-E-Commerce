@@ -1,5 +1,5 @@
-import React from 'react'
-
+import React, {useEffect, useState} from 'react'
+import {StripeProvider, Elements} from 'react-stripe-elements'
 import Layout from 'components/layout'
 
 import {ProductWrapper} from 'styles/product'
@@ -13,28 +13,37 @@ import { fetchSingleProduct } from 'api'
 
 
 
-const Product = ({title, image, date, description, price}) => {
-  console.log(title, ' : ', title.split('-').join(' '))
+const Product = ({id, title, image, date, description, price}) => {
+  
+  const [stripeKey, setStripeKey] = useState(null)
+
+  // FIX for SSR
+  useEffect(() => {
+    if(typeof window !== 'undefined') setStripeKey(window.Stripe('pk_test_wobHrjRAJL2hxcuVDradabeJ00ctLPoRrx'))
+  }, [])
+  
   return (
-      <Layout>
-        <ProductWrapper>
-          <ProductTitle styleProduct>{title}</ProductTitle>
-          <ProductImage styleProduct src={image}/>
-          <ProductDate styleProduct date={date} caption="lorem ipsum"/>
-          <ProductDescription styleProduct>{description}</ ProductDescription>
-          <ProductCheckout price={price}/>
-        </ProductWrapper>
-      </Layout>
+    <StripeProvider stripe={stripeKey}>
+      <Elements>
+        <Layout>
+          <ProductWrapper>
+            <ProductTitle styleProduct>{title}</ProductTitle>
+            <ProductImage styleProduct src={image}/>
+            <ProductDate styleProduct date={date} caption="lorem ipsum"/>
+            <ProductDescription styleProduct>{description}</ ProductDescription>
+            <ProductCheckout id={id} image={image} title={title} price={price}/>
+          </ProductWrapper>
+        </Layout>
+      </Elements>
+    </StripeProvider>
   )
 }
 
 Product.getInitialProps = async (context) => {
-  
-  console.log(' CONTEXT: ', context)
-  let {title, image, date, description, price} = await fetchSingleProduct(context.query.slug.split('-').join(' '))
-
+  let {id, title, image, date, description, price} = await fetchSingleProduct(context.query.slug.split('-').join(' '))
 
   return {
+    id,
     title,
     date: parseDate(date),
     image: image.fields.file.url,
