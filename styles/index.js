@@ -21,6 +21,9 @@ margin: 0 auto;
 @media only screen and (min-width: 1140px){
   margin: ${props => props.styleProduct ? 'auto': '0'};
 }
+${props => props.maxWidth && css`
+width: ${props.maxWidth};
+`}
 `
 
 export const StyledActionButton = styled.button`
