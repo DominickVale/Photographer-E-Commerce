@@ -1,4 +1,5 @@
 import React,{ useEffect} from 'react'
+import Router from 'next/router'
 
 import CloseButton from '../layout/CloseButton'
 import {useCart, useCartDispatch} from 'components/Store'
@@ -6,6 +7,8 @@ import {StyledCartWrapper, StyledCart, CartHeading, CartHeadingWrapper, CartChec
 import {Filler} from 'styles'
 import CartItem from 'components/Cart/CartItem'
 import ActionButton from 'components/ActionButton'
+
+export const getCartTotalAmount = (cart) => cart.reduce((acc, item) => acc+=(parseFloat((item.price*item.quantity).toFixed(2))), 0) || ''
 
 const Cart = (props) => {
   const cart = useCart()
@@ -28,8 +31,8 @@ const Cart = (props) => {
           ))}
         </CartItemsContainer>
         <CartCheckoutWrapper>
-          <CartCheckoutTotal>{cart.reduce((acc, item) => acc+=(parseFloat((item.price*item.quantity).toFixed(2))), 0) || ''}</CartCheckoutTotal>
-          <ActionButton styleProduct>Checkout</ActionButton>
+          <CartCheckoutTotal>{getCartTotalAmount(cart)}</CartCheckoutTotal>
+          <ActionButton styleProduct onClick={() => Router.push('/checkout')}>CHECKOUT</ActionButton>
         </CartCheckoutWrapper>
       </StyledCart>
     </StyledCartWrapper>

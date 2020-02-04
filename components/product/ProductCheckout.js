@@ -1,5 +1,4 @@
 import React, {useState} from 'react'
-import {injectStripe} from 'react-stripe-elements'
 
 import ActionButton from '../ActionButton'
 import {CheckoutWrapper, CheckoutBreak, ProductPrice, QuantitySelectorWrapper, QuantitySelectorValue, QuantityOperator} from 'styles/product'
@@ -52,4 +51,4 @@ const ProductCheckout = (props) => {
   )
 }
 
-export default injectStripe(ProductCheckout)
+export default ProductCheckout

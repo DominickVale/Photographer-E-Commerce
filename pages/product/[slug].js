@@ -1,5 +1,4 @@
-import React, {useEffect, useState} from 'react'
-import {StripeProvider, Elements} from 'react-stripe-elements'
+import React from 'react'
 import Layout from 'components/layout'
 
 import {ProductWrapper} from 'styles/product'
@@ -12,30 +11,18 @@ import { parseDate } from 'utils'
 import { fetchSingleProduct } from 'api'
 
 
-
 const Product = ({id, title, image, date, description, price}) => {
   
-  const [stripeKey, setStripeKey] = useState(null)
-
-  // FIX for SSR
-  useEffect(() => {
-    if(typeof window !== 'undefined') setStripeKey(window.Stripe('pk_test_wobHrjRAJL2hxcuVDradabeJ00ctLPoRrx'))
-  }, [])
-  
   return (
-    <StripeProvider stripe={stripeKey}>
-      <Elements>
-        <Layout>
-          <ProductWrapper>
-            <ProductTitle styleProduct>{title}</ProductTitle>
-            <ProductImage styleProduct src={image}/>
-            <ProductDate styleProduct date={date} caption="lorem ipsum"/>
-            <ProductDescription styleProduct>{description}</ ProductDescription>
-            <ProductCheckout id={id} image={image} title={title} price={price}/>
-          </ProductWrapper>
-        </Layout>
-      </Elements>
-    </StripeProvider>
+    <Layout>
+      <ProductWrapper>
+        <ProductTitle styleProduct>{title}</ProductTitle>
+        <ProductImage styleProduct src={image}/>
+        <ProductDate styleProduct date={date} caption="lorem ipsum"/>
+        <ProductDescription styleProduct>{description}</ ProductDescription>
+        <ProductCheckout id={id} image={image} title={title} price={price}/>
+      </ProductWrapper>
+    </Layout>
   )
 }
 
