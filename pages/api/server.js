@@ -17,7 +17,7 @@ app.prepare().then(() => {
       amount: Math.round(amount*100),
       currency: 'usd',
       source: token,
-      description: 'Test'
+      description: 'Photographer E commerce'
     })
   }
 
