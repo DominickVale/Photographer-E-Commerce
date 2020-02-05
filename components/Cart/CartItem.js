@@ -15,7 +15,7 @@ const CartItem = ({id, title, image, price, quantity}) => {
       <CartItemTitle>{title.toUpperCase()}</CartItemTitle>
       <CartItemPrice>{price} $</CartItemPrice>
       <CartItemQuantity>{quantity}</CartItemQuantity>
-      <DeleteButton styleCart onClick={() => {console.log('removing: ',id); dispatch(removeCartItem(id))}}/>
+      <DeleteButton styleCart fillColor="#111111" onClick={() => {console.log('removing: ',id); dispatch(removeCartItem(id))}}/>
     </CartItemWrapper>
   )
 }
