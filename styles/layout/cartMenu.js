@@ -29,6 +29,10 @@ grid-template-areas:
 "title title title"
 "container container container"
 "checkout checkout checkout";
+@media only screen and (min-width: 1140px){
+  max-width: 45%;
+  min-width: 25%;
+}
 `
 
 export const CartItemsContainer = styled.div`
@@ -54,7 +58,7 @@ width: 100%;
 export const CartHeading = styled.h1`
 width: 100%;
 margin: auto;
-font-size: 2rem;
+font-size: 4vw;
 color: ${variables.productTitleColor};
 position: relative;
 top: -2.6rem;
@@ -73,7 +77,7 @@ justify-content: space-between;
 align-items: center;
 grid-column-gap: 1rem;
 grid-template-columns: 2fr 2fr 1fr 1fr;
-grid-template-rows: 1fr auto 1fr;
+grid-template-rows: 1fr auto auto;
 grid-template-areas:
 "image title title delete"
 "image quantity . delete"
@@ -85,25 +89,30 @@ grid-area: image;
 max-width: 100%;
 max-height: 100%;
 object-fit: contain;
+@media only screen and (min-width: 1140px){
+  max-width: 80%;
+}
 `
 
 export const CartItemTitle = styled.h2`
 grid-area: title;
 margin: 0;
 font-weight: 900;
-font-size: 1rem;
+font-size: calc(1.4vw + 0.8vh);
 color: ${variables.baseFontColor};
 `
 
 export const CartItemPrice = styled.span`
 grid-area: price;
-font-size: 0.8rem;
+font-size: calc(1vw + 1vh);
 color: ${variables.baseFontColor};
 `
 
 export const CartItemQuantity = styled.span`
-font-size: 0.9rem;
-font-weight: 400;
+font-size: calc(1vw + 1vh);
+font-weight: 300;
+color: ${variables.baseFontColor};
+margin: 1rem 0
 `
 
 export const CartCheckoutWrapper = styled.div`

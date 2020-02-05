@@ -10,7 +10,7 @@ import Cart from '../Cart'
 import Menu from '../Menu'
 
 const Header = (props) => {
-  const [cartMenuShown, setCartMenuShown] = useState(true)
+  const [cartMenuShown, setCartMenuShown] = useState(false)
   const [menuShown, setMenuShown] = useState(false)
 
   return (
