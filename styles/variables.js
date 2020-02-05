@@ -16,5 +16,6 @@ export default {
   footerLogoFontColor: '#5A5A5A',
   quantityValueColor: '#666',
   quantityOperatorColor: '#ccc',
-  quantityBorderColor: '#aaa'
+  quantityBorderColor: '#aaa',
+  textboxFontColor: '#666'
 }

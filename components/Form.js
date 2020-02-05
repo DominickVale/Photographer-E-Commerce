@@ -1,10 +1,11 @@
 import React,{useEffect, useState} from 'react'
+import fetch from 'isomorphic-unfetch'
 
 import {injectStripe} from 'react-stripe-elements'
 import {StyledCheckoutTextbox, StyledCardElement, CheckoutWrapper, StyledCheckoutForm} from 'styles/checkout'
 import {ActionButton} from 'components/ActionButton'
 import { Filler } from 'styles'
-import fetch from 'isomorphic-unfetch'
+import variables from 'styles/variables'
 
 import {useCart} from 'components/Store'
 import { getCartTotalAmount } from 'components/Cart'
@@ -12,11 +13,12 @@ import { getCartTotalAmount } from 'components/Cart'
 
 const cardStyle = {
   base: {
-    color: "#32325d",
+    borderBottom: "1px solid black",
+    color: variables.textboxFontColor,
     fontFamily: 'Roboto, sans-serif',
     fontSize: "16px",
     "::placeholder": {
-      color: "#aab7c4"
+      color: 'grey'
     }
   },
   invalid: {
@@ -27,7 +29,6 @@ const cardStyle = {
 
 
 const Form = (props) => {
-  
   const cart = useCart()
 
   const [state, setState] = useState({
@@ -46,7 +47,7 @@ const Form = (props) => {
   const onSubmit = async (evt) => {
     evt.preventDefault()
     try {
-      let {token} = await props.stripe.createToken({name: state.name})
+      let {token} = await props.stripe.createToken({name: `${state.name} ${state.surname}`})
       console.log(token)
       await fetch('/checkout', {
         method: 'POST',
@@ -71,7 +72,7 @@ const Form = (props) => {
         <StyledCardElement style={cardStyle} />
       </StyledCheckoutForm>
       <Filler width="100%" height="8vh"/>
-      <ActionButton maxWidth="12rem" onClick={onSubmit}/>
+      <ActionButton maxWidth="12rem" onClick={onSubmit} styleProduct/>
     </CheckoutWrapper>
   )
 }
