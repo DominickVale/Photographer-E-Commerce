@@ -1,8 +1,9 @@
 import React,{useEffect, useState} from 'react'
+import Router from 'next/router'
 import fetch from 'isomorphic-unfetch'
 
 import {injectStripe} from 'react-stripe-elements'
-import {StyledCheckoutTextbox, StyledCardElement, CheckoutWrapper, StyledCheckoutForm} from 'styles/checkout'
+import {StyledCheckoutTextbox, StyledCardElement, CheckoutWrapper, StyledCheckoutForm, Purchased} from 'styles/checkout'
 import {ActionButton} from 'components/ActionButton'
 import { Filler } from 'styles'
 import variables from 'styles/variables'
@@ -13,7 +14,6 @@ import { getCartTotalAmount } from 'components/Cart'
 
 const cardStyle = {
   base: {
-    borderBottom: "1px solid black",
     color: variables.textboxFontColor,
     fontFamily: 'Roboto, sans-serif',
     fontSize: "16px",
@@ -31,6 +31,7 @@ const cardStyle = {
 const Form = (props) => {
   const cart = useCart()
 
+  const [purchased, setPurchased] = useState(false)
   const [state, setState] = useState({
     name: '',
     surname: '',
@@ -49,7 +50,7 @@ const Form = (props) => {
     try {
       let {token} = await props.stripe.createToken({name: `${state.name} ${state.surname}`})
       console.log(token)
-      await fetch('/checkout', {
+      let response = await fetch('/checkout', {
         method: 'POST',
         headers: {
           'Content-type': 'application/json'
@@ -57,6 +58,13 @@ const Form = (props) => {
         body: JSON.stringify({token, amount: getCartTotalAmount(cart)})
       })
 
+      console.log(' RESPONSE: ', response)
+      if(response.ok) {
+        setPurchased(true)
+      setTimeout(() => {
+        Router.push('/')
+      }, 6000);
+      }
     } catch (error) {
       console.log(error)
     }
@@ -64,6 +72,7 @@ const Form = (props) => {
 
   return (
     <CheckoutWrapper>
+      {purchased && (<Purchased>Thank you for purchasing!</Purchased>)}
       <StyledCheckoutForm>
         <StyledCheckoutTextbox value={state.name} id="name" onChange={onTextboxChange}type="text" area="name" placeholder="Name" width="40%"/>
         <StyledCheckoutTextbox value={state.surname} id="surname" onChange={onTextboxChange}type="text" area="surname" placeholder="Surname" width="40%" right/>
