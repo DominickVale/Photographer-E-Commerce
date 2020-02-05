@@ -8,7 +8,7 @@ import HamButton from './HamButton'
 import CartButton from './CartButton'
 import Cart from '../Cart'
 
-const Header = () => {
+const Header = (props) => {
   const [cartMenuShown, setCartMenuShown] = useState(false)
 
   return (
@@ -16,14 +16,22 @@ const Header = () => {
     <NavContainer>
       <NavHamContainer onClick={() => setCartMenuShown(cartMenuShown => !cartMenuShown)}><HamButton/></NavHamContainer>
       <NavLinks>
-        <NavLink><Link href="/">about</Link></NavLink>
-        <NavLink><Link href="/">contact</Link></NavLink>
+        {props.noLinks || (
+        <>
+          <NavLink><Link href="/">about</Link></NavLink>
+          <NavLink><Link href="/">contact</Link></NavLink>
+        </>
+        )}
       </NavLinks>
       <NavBrand href="/"><TextLogo>Photo<br/>Commerce</TextLogo></NavBrand>
       <Filler width="100%" hideDesktop/>
       <NavRight>
-        <NavLink href="#">IT EN</NavLink>
-        <NavLink href="#"><CartButton onClick={() => setCartMenuShown(true)}/></NavLink>
+        {props.noLinks || (
+          <>
+            <NavLink href="#">IT EN</NavLink>
+            <NavLink href="#"><CartButton onClick={() => setCartMenuShown(true)}/></NavLink>
+          </>
+        )}
       </NavRight>
     </NavContainer>
     {cartMenuShown && (<Cart onCloseCart={() => setCartMenuShown(false)}/>)}

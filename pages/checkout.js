@@ -13,7 +13,7 @@ const checkout = () => {
   }, [])
 
   return (
-    <Layout>
+    <Layout noLinks>
       <StripeProvider stripe={stripeKey}>
         <Elements>
           <Form />

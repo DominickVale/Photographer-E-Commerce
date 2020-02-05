@@ -33,7 +33,7 @@ const Layout = (props) => {
     <div>
       <GlobalStyle />
       <Normalize />
-      <Header />
+      <Header noLinks={props.noLinks}/>
       <Container>
         {props.children}
       </Container>
