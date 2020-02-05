@@ -7,14 +7,16 @@ import {Filler} from 'styles'
 import HamButton from './HamButton'
 import CartButton from './CartButton'
 import Cart from '../Cart'
+import Menu from '../Menu'
 
 const Header = (props) => {
-  const [cartMenuShown, setCartMenuShown] = useState(false)
+  const [cartMenuShown, setCartMenuShown] = useState(true)
+  const [menuShown, setMenuShown] = useState(false)
 
   return (
     <>
     <NavContainer>
-      <NavHamContainer onClick={() => setCartMenuShown(cartMenuShown => !cartMenuShown)}><HamButton/></NavHamContainer>
+      <NavHamContainer onClick={() => setMenuShown(true)}><HamButton/></NavHamContainer>
       <NavLinks>
         {props.noLinks || (
         <>
@@ -34,6 +36,8 @@ const Header = (props) => {
         )}
       </NavRight>
     </NavContainer>
+
+    {menuShown && (<Menu onCloseMenu={() => setMenuShown(false)}/>)}
     {cartMenuShown && (<Cart onCloseCart={() => setCartMenuShown(false)}/>)}
     </>
   )
