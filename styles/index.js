@@ -27,6 +27,7 @@ width: ${props.maxWidth};
 `
 
 export const StyledActionButton = styled.button`
+cursor: pointer;
 background-color: white;
 font-weight: 900;
 border: none;
