@@ -11,7 +11,7 @@ app.prepare().then(() => {
   const server = express()
   server.use(express.json())
 
-  const stripe = stripeLoader('sk_test_gZnKU7D9UZxWZS7dQEM7hLLK00NH2abn4L')
+  const stripe = stripeLoader(process.env.STRIPE_SECRET)
   const charge = (token, amount) => {
     return stripe.charges.create({
       amount: Math.round(amount*100),

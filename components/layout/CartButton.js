@@ -1,6 +1,6 @@
 import React from 'react'
 
-import {StyledCartButton} from 'styles/layout/CartButton'
+import {StyledCartButton} from 'styles/layout/cartButton'
 
 const CartButton = (props) => {
   return (

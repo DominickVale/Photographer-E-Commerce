@@ -1,5 +1,4 @@
 import React from 'react'
-import Button from 'public/HamButton.svg'
 
 import {StyledHamButton} from 'styles/layout/hamButton'
 
