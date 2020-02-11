@@ -31,7 +31,7 @@ const Header = (props) => {
       <NavRight>
         {props.noLinks || (
           <>
-            <NavLink href="#">IT EN</NavLink>
+            <NavLink href="#" style={{pointerEvents: 'none'}}><a>IT</a><a> EN</a></NavLink>
             <NavLink href="#"><CartButton onClick={() => setCartMenuShown(true)}/></NavLink>
           </>
         )}

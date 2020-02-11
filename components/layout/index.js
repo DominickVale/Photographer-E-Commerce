@@ -23,7 +23,7 @@ const GlobalStyle = createGlobalStyle`
     text-decoration: none;
     color: ${variables.linkColor};
     &:visited{
-      color: inherit;
+      color: ${variables.linkColor};
     }
   }
 

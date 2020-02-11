@@ -55,4 +55,28 @@ export const NavLink = styled.span`
 margin: auto 0;
 margin-left: 4vw;
 font-size: ${variables.linkFontSize};
+transition: all 0.3s ease;
+a{
+  position: relative;
+  padding: 0.5rem;
+  &:after{
+    content: "";
+    width: 0%;
+    height: 2px;
+    position: absolute;
+    bottom: 0.2rem;
+    left: 0;
+    display: inline-block;
+    background-color: ${variables.baseFontColor};
+    transition: all 0.3s ease;
+  }
+}
+&:hover{
+  a{
+    color: black;
+    &:after{
+      width: 100%;
+    };
+  }
+}
 `

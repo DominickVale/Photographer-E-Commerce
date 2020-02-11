@@ -1,4 +1,5 @@
 export default {
+  popInDuration: 4000,
   bodyBGColor: '#f1f3f7',
   dollarColor: '#97A491',
   contentMarginHorizontal: '33px',
@@ -7,7 +8,7 @@ export default {
   baseFontColor: 'rgb(38, 36, 36)',
   logoFontColor: '#444444',
   logoFontSize: '18px',
-  linkColor: '#262626',
+  linkColor: '#4f4f4f',
   linkFontSize: '0.9rem',
   productTitleColor: '#262626',
   productTitleBGColor: 'rgba(5, 2, 0, 0.9)',

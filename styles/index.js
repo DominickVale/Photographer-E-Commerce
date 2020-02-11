@@ -27,12 +27,42 @@ width: ${props.maxWidth};
 `
 
 export const StyledActionButton = styled.button`
+position: relative;
 cursor: pointer;
-background-color: white;
+background: white;
 font-weight: 900;
 border: none;
 padding: 1rem 2rem;
 border: 1px solid black;
+overflow: hidden;
+p{
+  position: relative;
+  transition: all .30s ease-in-out;
+  margin: 0;
+  color: black;
+  z-index: 100 !important;
+};
+&::before{
+  content: "";
+  display: inline-block;
+  background-color: black;
+  width: 0%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 0;
+  transition: all 0.25s ease-in;
+}
+&:hover{
+  border: 1px solid white;
+  p{
+    color: white;
+  }
+  &::before{
+    width: 100%;
+  }
+}
 ${props => props.styleProduct && css`
   font-size: 1.2rem;
   padding: 1.2rem 2.4rem;

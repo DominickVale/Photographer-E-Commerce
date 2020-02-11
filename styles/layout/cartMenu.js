@@ -2,7 +2,7 @@ import styled from 'styled-components'
 import variables from 'styles/variables'
 
 export const StyledCartWrapper = styled.div`
-z-index: 100;
+z-index: 10000;
 outline: 1px solid red;
 background-color: rgba(0,0,0,0.4);
 position: fixed;

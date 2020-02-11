@@ -1,6 +1,7 @@
 import styled, {css} from 'styled-components'
 
 export const StyledCloseButton = styled.button`
+cursor: pointer;
 z-index: 1000;
 grid-area: delete;
 width: 40px;

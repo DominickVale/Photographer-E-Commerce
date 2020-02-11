@@ -7,6 +7,7 @@ import {CheckoutWrapper, CheckoutBreak, ProductPrice, QuantitySelectorWrapper, Q
 import {useCart, useCartDispatch} from 'components/Store'
 
 import { addCartItem, removeCartItem } from 'actions'
+import variables from 'styles/variables'
 
 
 const ProductCheckout = (props) => {
@@ -31,7 +32,7 @@ const ProductCheckout = (props) => {
     setNotifShown(true)
     setTimeout(() => {
       setNotifShown(false)
-    }, 2000);
+    }, variables.popInDuration);
   }
 
   const updateQuantity = (op) => {
