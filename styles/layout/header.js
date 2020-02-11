@@ -59,6 +59,7 @@ transition: all 0.3s ease;
 a{
   position: relative;
   padding: 0.5rem;
+  color: ${variables.linkColor};
   &:after{
     content: "";
     width: 0%;

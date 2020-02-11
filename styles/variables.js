@@ -11,7 +11,7 @@ export default {
   linkColor: '#4f4f4f',
   linkFontSize: '0.9rem',
   productTitleColor: '#262626',
-  productTitleBGColor: 'rgba(5, 2, 0, 0.9)',
+  productTitleBGColor: 'rgba(5, 2, 0, 0.7)',
   productTitleSize: 'calc(8vw + 1vh)',
   productTitleSizeMaxMobile: '7rem',
   productTitleSizeDesktop: 'calc(5vw + 5vh)',

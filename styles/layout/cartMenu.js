@@ -13,7 +13,7 @@ bottom: 0;
 `
 
 export const StyledCart = styled.div`
-background-color: white;
+background-color: ${variables.bodyBGColor};
 position: absolute;
 top: 0;
 right: 0;
@@ -53,20 +53,25 @@ scroll-behavior: unset;
 export const CartHeadingWrapper = styled.div`
 grid-area: title;
 width: 100%;
+display: flex;
+justify-content: space-between;
+align-items: center;
+justify-items: center;
 `
 
 export const CartHeading = styled.h1`
 width: 100%;
 margin: auto;
-font-size: 4vw;
+font-size: 2rem;
 color: ${variables.productTitleColor};
-position: relative;
-top: -2.6rem;
 text-align: center;
+@media only screen and (min-width: 720px) {
+  font-size: 4vw;
+}
 `
 
 export const CartItemWrapper = styled.div`
-background-color: white;
+background-color: ${variables.bodyBGColor};
 border-bottom: 1px solid grey;
 min-height: 3rem;
 margin-bottom: 1rem;
@@ -122,7 +127,6 @@ height: 100%;
 width: 100%;
 display: flex;
 flex-direction: column;
-background-color: rgba(255,255,255,0.8);
 `
 
 export const CartCheckoutTotal = styled.span`

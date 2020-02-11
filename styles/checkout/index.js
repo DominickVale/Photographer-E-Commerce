@@ -62,7 +62,7 @@ text-align: center;
 font-size: 10vw;
 color: black;
 font-weight: 900;
-background-color: white;
+background-color: ${variables.bodyBGColor};
 z-index: 10000;
 text-decoration: underline;
 `

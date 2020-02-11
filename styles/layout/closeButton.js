@@ -8,7 +8,7 @@ width: 40px;
 height: 40px;
 border: none;
 background: none;
-transform: scale(1.2)
+transform: scale(1.2);
 ${props => props.styleCart && css`
   position: relative !important;
   width: 100%;

@@ -1,4 +1,5 @@
 import styled,{css} from 'styled-components'
+import variables from 'styles/variables'
 
 export const Filler = styled.div`
   height: ${props => props.height};
@@ -29,7 +30,7 @@ width: ${props.maxWidth};
 export const StyledActionButton = styled.button`
 position: relative;
 cursor: pointer;
-background: white;
+background: ${variables.bodyBGColor};
 font-weight: 900;
 border: none;
 padding: 1rem 2rem;

@@ -44,14 +44,18 @@ background-color: ${variables.productTitleBGColor};
 ${props => props.styleProduct && css`
   position: relative;
   top: 0;
-  left: 0;
+  left: -1rem;
   margin: 2rem 0 0 0;
+  background-color: transparent;
+  color: ${variables.productTitleColor};
 `}
 @media only screen and (min-width: 720px){
   font-size: ${variables.productTitleSizeMaxMobile};
   margin: 1rem 0 0 0;
 }
 @media only screen and (min-width: 1140px){
+  background-color: transparent;
+  color: ${variables.productTitleColor};
   position: relative;
   align-self: flex-end;
   font-size: ${variables.productTitleSizeDesktop};
@@ -88,7 +92,7 @@ margin: 0;
 export const StyledDate = styled.span`
 z-index: 10;
 grid-area: date;
-background-color: white;
+background-color: ${variables.bodyBGColor};
 display: flex;
 flex-direction: row;
 justify-content: space-between;

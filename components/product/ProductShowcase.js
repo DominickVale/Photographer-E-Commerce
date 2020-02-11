@@ -21,7 +21,7 @@ const ProductShowcase = ({title, image, date, shortDescription}) => {
       <ProductDate date={date} caption="lorem ipsum"/>
       <Arrow />
       <ProductDescription readMoreLink={{URL, asURL}}>{shortDescription}</ProductDescription>
-      <ActionButton onClick={() => router.push(URL, asURL).then(()=> window.scrollTo(0,0))}>Check out</ActionButton>
+      <ActionButton onClick={() => router.push(URL, asURL).then(()=> window.scrollTo(0,0))}>CHECK OUT</ActionButton>
     </ProductWrapper>
   )
 }
