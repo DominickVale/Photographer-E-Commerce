@@ -71,13 +71,28 @@ width: 100%;
 `
 
 export const ProductPrice = styled.h1`
+color: ${variables.productTitleColor};
+user-select: none;
+position: relative;
 grid-area: price;
 font-size: 3rem;
 font-weight: 600;
-margin: 0 1rem;
+margin: 0 3rem 0 1rem;
+&::after{
+  user-select: none;
+  content: "$";
+  width: 1rem;
+  height: 1rem;
+  font-size: 1.4rem;
+  color: ${variables.dollarColor};
+  position: absolute;
+  top: 12%;
+}
 `
 
 export const QuantitySelectorWrapper = styled.div`
+background-color: white;
+user-select: none;
 margin: auto 0;
 max-height: 2rem;
 padding: 0 1rem;
