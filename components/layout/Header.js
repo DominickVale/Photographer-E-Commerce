@@ -16,17 +16,18 @@ const Header = (props) => {
   return (
     <>
     <NavContainer>
-      <NavHamContainer onClick={() => setMenuShown(true)}><HamButton/></NavHamContainer>
+      <NavHamContainer align="left" onClick={() => setMenuShown(true)}><HamButton/></NavHamContainer>
+        <Filler width="100%" hideDesktop/>
       <NavLinks>
         {props.noLinks || (
-        <>
+          <>
           <NavLink><Link href="/">about</Link></NavLink>
           <NavLink><Link href="/">contact</Link></NavLink>
         </>
         )}
       </NavLinks>
       <NavBrand href="/"><TextLogo>Photo<br/>Commerce</TextLogo></NavBrand>
-      <Filler width="100%" hideDesktop/>
+        <Filler width="100%" hideDesktop/>
       <NavRight>
         {props.noLinks || (
           <>
@@ -35,6 +36,9 @@ const Header = (props) => {
           </>
         )}
       </NavRight>
+      <NavHamContainer align="right">
+        <CartButton onClick={() => setCartMenuShown(true)}/>
+      </NavHamContainer>
     </NavContainer>
 
     {menuShown && (<Menu onCloseMenu={() => setMenuShown(false)}/>)}

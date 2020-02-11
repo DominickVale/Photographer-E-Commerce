@@ -25,7 +25,7 @@ export const NavBrand = styled(Link)`
 
 export const NavHamContainer = styled.div`
   width: 100%;
-
+  text-align: ${props=> props.align};
   @media only screen and (min-width: 720px) {
     display: none;
   }
@@ -54,5 +54,5 @@ justify-items: center;
 export const NavLink = styled.span`
 margin: auto 0;
 margin-left: 4vw;
-font-size: 0.8rem;
+font-size: ${variables.linkFontSize};
 `
