@@ -1,6 +1,8 @@
 import React, {useState} from 'react'
 
 import ActionButton from '../ActionButton'
+import Notification from '../Notifications'
+
 import {CheckoutWrapper, CheckoutBreak, ProductPrice, QuantitySelectorWrapper, QuantitySelectorValue, QuantityOperator} from 'styles/product'
 import {useCart, useCartDispatch} from 'components/Store'
 
@@ -8,6 +10,8 @@ import { addCartItem, removeCartItem } from 'actions'
 
 
 const ProductCheckout = (props) => {
+
+  const [notifShown, setNotifShown] = useState(false)
 
   const [cartItem, setCartItem] = useState({
     id: props.id,
@@ -24,6 +28,10 @@ const ProductCheckout = (props) => {
   const addToCart = () => {
     console.log('ADD CART ITEM: ', cartItem)
     dispatch(addCartItem(cartItem))
+    setNotifShown(true)
+    setTimeout(() => {
+      setNotifShown(false)
+    }, 2000);
   }
 
   const updateQuantity = (op) => {
@@ -47,6 +55,7 @@ const ProductCheckout = (props) => {
       </QuantitySelectorWrapper>
       <CheckoutBreak />
       <ActionButton styleProduct onClick={addToCart}>ADD TO CART</ActionButton>
+      {notifShown && (<Notification>Added to cart!</Notification>)}
     </CheckoutWrapper>
   )
 }
