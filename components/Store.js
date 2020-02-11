@@ -11,7 +11,24 @@ export const CartDispatchContext = createContext();
 
 const reducer = (state, action) => {
   switch(action.type){
-    case CART_ADD_ITEM: return [...state, action.payload]
+    case CART_ADD_ITEM:
+      let includes = state.some(item => { console.log('itemid: ', item.id, ' acid: ', action.payload.id); return item.id === action.payload.id})
+      if(includes){
+        let newState = state.reduce((acc, item) => {
+          if (item.id === action.payload.id) {
+            console.log('Changing quantity...')
+            acc.push({ ...item, quantity: item.quantity+action.payload.quantity })
+          } else {
+            acc.push(item)
+          }
+
+          return acc;
+          }, []);
+        
+        return [...newState]
+      }
+        else return [...state, action.payload]
+
     case CART_REMOVE_ITEM: return [...state.filter(el => el.id !== action.payload )]
     default:
       console.warn('Invalid action dispatched: ', action.type)

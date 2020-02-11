@@ -22,7 +22,7 @@ const Cart = (props) => {
     <StyledCartWrapper>
       <StyledCart>
         <CartHeadingWrapper>
-          <CloseButton onClick={() => props.onCloseCart()}/>
+          <CloseButton onClick={() => props.onCloseCart()} styleCartHeading/>
           <CartHeading>Your cart</CartHeading>
         </CartHeadingWrapper>
         <CartItemsContainer>
