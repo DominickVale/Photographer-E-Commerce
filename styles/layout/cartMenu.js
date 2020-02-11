@@ -31,7 +31,7 @@ grid-template-areas:
 "checkout checkout checkout";
 @media only screen and (min-width: 1140px){
   max-width: 45%;
-  min-width: 25%;
+  min-width: 35%;
 }
 `
 
@@ -112,7 +112,7 @@ export const CartItemQuantity = styled.span`
 font-size: calc(1vw + 1vh);
 font-weight: 300;
 color: ${variables.baseFontColor};
-margin: 1rem 0
+margin: 1rem 0;
 `
 
 export const CartCheckoutWrapper = styled.div`

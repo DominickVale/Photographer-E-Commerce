@@ -4,18 +4,24 @@ import {createGlobalStyle} from 'styled-components'
 
 import Header from './Header'
 import Footer from './Footer'
+import variables from 'styles/variables'
 
 import {Container} from 'styles/layout'
 
 const GlobalStyle = createGlobalStyle`
   body{
     font-family: 'Roboto';
-    font-weight: 300;
-    background-color: white;
+    font-weight: 400;
+    background-color: ${variables.bodyBGColor};
+    *::selection{
+      color: black;
+      background-color: white;
+    }
   }
 
   a{
     text-decoration: none;
+    color: ${variables.linkColor};
     &:visited{
       color: inherit;
     }

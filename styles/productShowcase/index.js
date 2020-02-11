@@ -33,13 +33,14 @@ export const StyledProductTitle = styled.h1`
 grid-area: title;
 line-height: 0.8;
 font-size: ${variables.productTitleSize};
-color: ${variables.productTitleColor};
+color: white;
 position: absolute;
-top: -6rem;
+top: -9rem;
 left: -1rem;
 z-index: 10;
--webkit-text-stroke-width: 1px;
--webkit-text-stroke-color: white;
+padding: 1rem;
+max-width: 66vw;
+background-color: ${variables.productTitleBGColor};
 ${props => props.styleProduct && css`
   position: relative;
   top: 0;
@@ -69,7 +70,8 @@ display: flex;
 justify-content: center;
 position: relative;
 @media only screen and (min-width: 1140px) {
-  max-width: 40vw;
+  max-width: 58vw;
+  left: 3vw;
   ${props => props.styleProduct && css`
   max-width: 60vw;
 `}
@@ -84,6 +86,7 @@ margin: 0;
 `
 
 export const StyledDate = styled.span`
+z-index: 10;
 grid-area: date;
 background-color: white;
 display: flex;
