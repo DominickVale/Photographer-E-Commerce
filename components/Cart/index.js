@@ -8,7 +8,7 @@ import {Filler} from 'styles'
 import CartItem from 'components/Cart/CartItem'
 import ActionButton from 'components/ActionButton'
 
-export const getCartTotalAmount = (cart) => cart.reduce((acc, item) => acc+=(parseFloat((item.price*item.quantity).toFixed(2))), 0) || ''
+export const getCartTotalAmount = (cart) => cart.reduce((acc, item) => acc+=item.price*item.quantity, 0) || ''
 
 const Cart = (props) => {
   const cart = useCart()
@@ -31,7 +31,7 @@ const Cart = (props) => {
           ))}
         </CartItemsContainer>
         <CartCheckoutWrapper>
-          <CartCheckoutTotal>{getCartTotalAmount(cart)}</CartCheckoutTotal>
+          <CartCheckoutTotal>$ {parseFloat(getCartTotalAmount(cart)).toFixed(2)}</CartCheckoutTotal>
           <ActionButton styleProduct onClick={() => Router.push('/checkout')}>CHECKOUT</ActionButton>
         </CartCheckoutWrapper>
       </StyledCart>

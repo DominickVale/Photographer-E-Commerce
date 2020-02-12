@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 
 import variables from 'styles/variables'
 
@@ -45,6 +45,7 @@ grid-template-areas:
 export const CheckoutWrapper = styled.section`
 margin: 2rem auto;
 grid-area: checkout;
+background-color: ${variables.bodyBGColor};
 display: grid;
 grid-row-gap: 0.5rem;
 width: 100%;
@@ -54,7 +55,8 @@ justify-content: center;
 align-items: center;
 justify-items: center;
 grid-template-areas:
-"price quantity"
+"price price"
+"quantity quantity"
 "linebreak linebreak"
 ". ."
 ". ."
@@ -77,7 +79,7 @@ position: relative;
 grid-area: price;
 font-size: 3rem;
 font-weight: 600;
-margin: 0 3rem 0 1rem;
+margin: 0 auto;
 &::after{
   user-select: none;
   content: "$";
@@ -88,18 +90,25 @@ margin: 0 3rem 0 1rem;
   position: absolute;
   top: 12%;
 }
+${props => props.styleCart && css`
+  margin-left: 0;
+  font-size: 2rem;
+  font-weight: 300;
+`}
 `
 
 export const QuantitySelectorWrapper = styled.div`
-background-color: white;
+background-color: ${variables.bodyBGColor};
 user-select: none;
-margin: auto 0;
+margin: 0.5rem auto;
 max-height: 2rem;
 padding: 0 1rem;
 width: 4rem;
 display: flex;
 justify-content: space-around;
 outline: 1px solid ${variables.quantityBorderColor};
+position: relative;
+left: 50%;
 `
 
 export const QuantitySelectorValue = styled.h5`
@@ -114,5 +123,5 @@ margin: 0;
 font-size: 1.8rem;
 cursor: pointer;
 max-width: 16px;
-color: ${variables.quantityOperatorColor}
+color: ${variables.quantityOperatorColor};
 `

@@ -55,7 +55,7 @@ const Form = (props) => {
         headers: {
           'Content-type': 'application/json'
         },
-        body: JSON.stringify({token, amount: getCartTotalAmount(cart)})
+        body: JSON.stringify({token, amount: parseFloat(getCartTotalAmount(cart)).toFixed(2)})
       })
 
       console.log(' RESPONSE: ', response)
