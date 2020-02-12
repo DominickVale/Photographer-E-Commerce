@@ -92,8 +92,17 @@ margin: 0 auto;
 }
 ${props => props.styleCart && css`
   margin-left: 0;
-  font-size: 2rem;
+  font-size: 3vw;
   font-weight: 300;
+  &::after{
+    font-size: 1.6vw;
+  }
+  @media only screen and (min-width: 1140px){
+    font-size: 1.8rem;
+    &::after{
+      font-size: 1.2rem;
+    }
+  }
 `}
 `
 
