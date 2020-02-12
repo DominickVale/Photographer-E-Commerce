@@ -1,15 +1,38 @@
-import styled from 'styled-components'
+import styled, {keyframes} from 'styled-components'
 import variables from 'styles/variables'
+
+
+/**
+ * Animations
+ */
+
+export const bgFadeIn = keyframes`
+from{
+  opacity: 0;
+  }
+to{
+  opacity: 1;
+}
+`;
+
+export const slideIn = keyframes`
+from{
+  transform: translateX(100vw);
+  }
+to{
+  transform: translateX(0);
+}
+`;
 
 export const StyledCartWrapper = styled.div`
 z-index: 10000;
-outline: 1px solid red;
 background-color: rgba(0,0,0,0.4);
 position: fixed;
 height: 100%;
 width: 100%;
 top: 0;
 bottom: 0;
+animation: ${bgFadeIn} 0.4s ease;
 `
 
 export const StyledCart = styled.div`
@@ -29,6 +52,7 @@ grid-template-areas:
 "title title title"
 "container container container"
 "checkout checkout checkout";
+animation: ${slideIn} 0.4s ease;
 @media only screen and (min-width: 1140px){
   max-width: 45%;
   min-width: 35%;
@@ -85,8 +109,8 @@ grid-template-columns: 2fr 2fr 1fr 1fr;
 grid-template-rows: 1fr auto auto;
 grid-template-areas:
 "image title title delete"
-"image quantity . delete"
-"image price . delete";
+"image price price quantity"
+"image . . .";
 `
 
 export const CartItemImage = styled.img`
@@ -107,17 +131,11 @@ font-size: calc(1.4vw + 0.8vh);
 color: ${variables.baseFontColor};
 `
 
-export const CartItemPrice = styled.span`
-grid-area: price;
-font-size: calc(1vw + 1vh);
-color: ${variables.baseFontColor};
-`
-
 export const CartItemQuantity = styled.span`
 font-size: calc(1vw + 1vh);
 font-weight: 300;
 color: ${variables.baseFontColor};
-margin: 1rem 0;
+margin: 1rem 0 1rem 1rem;
 `
 
 export const CartCheckoutWrapper = styled.div`

@@ -1,4 +1,14 @@
-import styled from 'styled-components'
+import styled, {keyframes} from 'styled-components'
+import variables from 'styles/variables';
+
+export const SlideDown = keyframes`
+from{
+  transform: translateY(-100vh);
+};
+to{
+  transform: translateY(0);
+};
+`;
 
 export const MenuBackgroundWrapper = styled.section`
 position: fixed;
@@ -6,9 +16,10 @@ top: 0;
 padding-top: 6vh;
 width: 100%;
 height: 100%;
-background-color: black;
+background-color: ${variables.menuBGColor};
 color: white;
 z-index: 1000;
+animation: ${SlideDown} 0.3s ease;
 `
 
 export const MenuWrapper = styled.div`
@@ -44,14 +55,37 @@ margin: 0;
 `
 
 export const MenuLink = styled.li`
+position: relative;
 width: 100%;
-border-bottom: 1px solid rgba(255,255,255, 0.8);
 margin: 4% auto;
 text-align: center;
+cursor: pointer;
 a{
   padding: 1rem;
+  color: ${variables.menuLinkColor} !important;
   display: inline-block;
   font-size: calc(100% + 1vw);
   font-weight: 300;
+  transition: all 0.4s ease;
+};
+&::after{
+  content:"";
+  display: inline-block;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  height: 1px;
+  background-color: white;
+  transition: all 0.2s ease;
+}
+&:hover{
+  &::after{
+    width: 100%;
+  }
+  a{
+    color: white !important;
+    transform: scale(1.2);
+  }
 }
 `

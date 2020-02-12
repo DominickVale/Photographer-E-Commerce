@@ -59,7 +59,7 @@ ${props => props.styleProduct && css`
   position: relative;
   align-self: flex-end;
   font-size: ${variables.productTitleSizeDesktop};
-  left: 0;
+  left: -1.2rem;
   top: -1.4rem;
   margin: 0;
 }
