@@ -14,10 +14,12 @@ import { fetchSingleProduct } from 'api'
 const Product = ({id, title, image, date, description, price}) => {
   
   return (
-    <Layout>
+    <Layout title={`Photographer E-commerce - ${title}`}
+      description={description}
+      keywords="e-commerce, photographer, learning">
       <ProductWrapper>
         <ProductTitle styleProduct>{title}</ProductTitle>
-        <ProductImage styleProduct src={image}/>
+        <ProductImage styleProduct src={image} alt={title}/>
         <ProductDate styleProduct date={date} caption="lorem ipsum"/>
         <ProductDescription styleProduct>{description}</ ProductDescription>
         <ProductCheckout id={id} image={image} title={title} price={price}/>

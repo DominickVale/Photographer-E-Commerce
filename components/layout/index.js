@@ -1,4 +1,5 @@
 import React from 'react'
+import Head from 'next/head'
 import {Normalize} from 'styled-normalize'
 import {createGlobalStyle} from 'styled-components'
 
@@ -36,15 +37,23 @@ const GlobalStyle = createGlobalStyle`
 
 const Layout = (props) => {
   return (
-    <div>
-      <GlobalStyle />
+    <>
+      <Head>
+        <title>{props.title || "Title"}</title>
+        <meta name="description" content={props.description || "Description"} />
+        <meta name="keywords" content={props.keywords || "Photographer, ecommerce"}/>
+        <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,900&display=swap" rel="stylesheet" />
+        <link rel="icon" href="/favicon.ico" />
+        <script src="https://js.stripe.com/v3/"></script>
+      </Head>
       <Normalize />
+      <GlobalStyle />
       <Header noLinks={props.noLinks}/>
       <Container>
         {props.children}
       </Container>
       <Footer />
-    </div>
+    </>
   )
 }
 

@@ -12,7 +12,7 @@ const CartItem = ({id, title, image, price, quantity}) => {
 
   return (
     <CartItemWrapper>
-      <CartItemImage src={image}/>
+      <CartItemImage src={image} alt={title}/>
       <CartItemTitle>{title.toUpperCase()}</CartItemTitle>
       <ProductPrice styleCart>{price}</ProductPrice>
       <CartItemQuantity>{quantity}</CartItemQuantity>

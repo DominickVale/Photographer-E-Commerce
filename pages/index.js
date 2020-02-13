@@ -1,5 +1,4 @@
 import React, {useEffect, useState} from 'react'
-import Head from 'next/head'
 
 import Layout from 'components/layout'
 import ProductShowcase from 'components/product/ProductShowcase'
@@ -22,11 +21,10 @@ const Home = (props) => {
 
   return (
   <>
-    <Head>
-      <title>Home</title>
-      <link rel="icon" href="/favicon.ico" />
-    </Head>
-    <Layout>
+    <Layout title="Photographer E-commerce - Homepage"
+      description="Fake photographer e-commerce website. Developed for learning."
+      keywords="e-commerce, photographer, learning">
+        
       {productList.map((product)=> {
         let {title, date, image, shortDescription} = product.fields;
         

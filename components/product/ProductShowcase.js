@@ -17,7 +17,7 @@ const ProductShowcase = ({title, image, date, shortDescription}) => {
   return (
     <ProductWrapper>
       <ProductTitle>{title}</ProductTitle>
-      <ProductImage src={image}></ProductImage>
+      <ProductImage src={image} alt={title}></ProductImage>
       <ProductDate date={date} caption="lorem ipsum"/>
       <Arrow />
       <ProductDescription readMoreLink={{URL, asURL}}>{shortDescription}</ProductDescription>

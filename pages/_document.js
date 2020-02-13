@@ -5,7 +5,7 @@
  * and also adding the babel-plugin-styled-components (which is required for server side rendering).
  */
 
-import Document from 'next/document'
+import Document, {Head, Html, Main, NextScript } from 'next/document'
 import { ServerStyleSheet } from 'styled-components'
 
 export default class MyDocument extends Document {
@@ -32,5 +32,21 @@ export default class MyDocument extends Document {
     } finally {
       sheet.seal()
     }
+  }
+
+  render() {
+    return (
+      <Html lang="en">
+        <Head>
+          <meta httpEquiv="Content-Type" content="text/html; charset=utf-8" />
+          <meta name="viewport" content="width=device-width, initial-scale=1"/>
+          {this.props.styleTags}
+        </Head>
+        <body>
+          <Main />
+          <NextScript />
+        </body>
+      </Html>
+    )
   }
 }
