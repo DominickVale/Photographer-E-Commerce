@@ -81,7 +81,7 @@ const Form = (props) => {
         <StyledCardElement style={cardStyle} />
       </StyledCheckoutForm>
       <Filler width="100%" height="8vh"/>
-      <ActionButton maxWidth="12rem" onClick={onSubmit} styleProduct/>
+      <ActionButton maxWidth="12rem" aria-label="Proceed to order" onClick={onSubmit} styleProduct styleCheckout/>
     </CheckoutWrapper>
   )
 }

@@ -24,6 +24,7 @@ margin: 0 auto 0 0;
 `}
 @media only screen and (min-width: 1140px){
   margin: ${props => props.styleProduct ? props.styleCart ? '0 auto' : '0 auto 0 0': '0'};
+  margin: ${props => props.styleCheckout && 'auto'}
 }
 ${props => props.maxWidth && css`
 width: ${props.maxWidth};
