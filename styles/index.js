@@ -19,12 +19,16 @@ display: flex;
 flex-direction: column;
 align-content: center;
 margin: 0 auto;
-${props => props.styleProduct && css`
-margin: 0 auto 0 0;
+${props => {
+  if(props.styleCart) return css`margin: 0 auto;`;
+  else if(props.styleProduct) return css` margin: 0 auto 0 0;`
+  }
+}
+${props => props.styleCheckout && css`
+  margin: 0 auto;
 `}
 @media only screen and (min-width: 1140px){
   margin: ${props => props.styleProduct ? props.styleCart ? '0 auto' : '0 auto 0 0': '0'};
-  margin: ${props => props.styleCheckout && 'auto'}
 }
 ${props => props.maxWidth && css`
 width: ${props.maxWidth};

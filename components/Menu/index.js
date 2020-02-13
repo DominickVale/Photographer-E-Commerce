@@ -14,8 +14,8 @@ const Menu = (props) => {
             <CloseButton onClick={props.onCloseMenu} fillColor="#ffffff"/>
           </MenuHeading>
           <MenuLinksWrapper>
-            <MenuLink><Link href="/">ABOUT</Link></MenuLink>
-            <MenuLink><Link href="/">CONTACTS</Link></MenuLink>
+            <MenuLink><Link href="/about">ABOUT</Link></MenuLink>
+            <MenuLink><Link href="#footer">CONTACTS</Link></MenuLink>
             <MenuLink><Link href="/">PRODUCTS</Link></MenuLink>
             <MenuLink><Link href="/">LEGAL</Link></MenuLink>
           </MenuLinksWrapper>
