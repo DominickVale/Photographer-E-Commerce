@@ -10,6 +10,10 @@ import variables from 'styles/variables'
 import {Container} from 'styles/layout'
 
 const GlobalStyle = createGlobalStyle`
+  html{
+    scroll-behavior: smooth;
+  }
+  
   body{
     font-family: 'Roboto';
     font-weight: 400;

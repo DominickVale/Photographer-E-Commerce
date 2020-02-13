@@ -22,7 +22,7 @@ const Cart = (props) => {
     <StyledCartWrapper>
       <StyledCart>
         <CartHeadingWrapper>
-          <CloseButton onClick={() => props.onCloseCart()} styleCartHeading/>
+          <CloseButton aria-label="Close cart" onClick={() => props.onCloseCart()} styleCartHeading/>
           <CartHeading>Your cart</CartHeading>
         </CartHeadingWrapper>
         <CartItemsContainer>
@@ -32,7 +32,7 @@ const Cart = (props) => {
         </CartItemsContainer>
         <CartCheckoutWrapper>
           <CartCheckoutTotal>{getCartTotalAmount(cart) && ('$ ' + parseFloat(getCartTotalAmount(cart)).toFixed(2))}</CartCheckoutTotal>
-          <ActionButton styleProduct styleCart onClick={() => Router.push('/checkout')}>CHECKOUT</ActionButton>
+          <ActionButton aria-label="Proceed to checkout" styleProduct styleCart onClick={() => Router.push('/checkout')}>CHECKOUT</ActionButton>
         </CartCheckoutWrapper>
       </StyledCart>
     </StyledCartWrapper>

@@ -41,7 +41,7 @@ width: 100%;
 max-width: 36rem;
 `
 
-export const FooterLinksContainer = styled.ul`
+export const FooterLinksContainer = styled.div`
 grid-area: links;
 padding: 0;
 display: flex;
@@ -97,7 +97,7 @@ align-items: flex-end;
 margin-right: 2rem;
 `
 
-export const ContactsLabel = styled.span`
+export const ContactsLabel = styled.li`
 margin: 1rem 0 0 auto;
 font-style: normal;
 font-weight: 900;

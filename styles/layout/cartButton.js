@@ -10,11 +10,23 @@ margin: auto;
 border: none;
 background: none;
 transform: scale(0.8);
+svg{
+  g{
+    transition: opacity 0.3s ease;
+  }
+}
 &::after{
   content: attr(data-items);
   position: absolute;
   right: 0;
   font-size: 0.6;
   color: ${variables.productTitleBGColor};
+}
+&:hover{
+  svg{
+    g{
+      opacity: 1;
+    }
+  }
 }
 `

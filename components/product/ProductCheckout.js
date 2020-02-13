@@ -55,7 +55,7 @@ const ProductCheckout = (props) => {
         <QuantitySelectorValue>{cartItem.quantity}</QuantitySelectorValue>
         <QuantityOperator onClick={() => updateQuantity('add')}>+</QuantityOperator>
       </QuantitySelectorWrapper>
-      <ActionButton styleProduct onClick={addToCart}>ADD TO CART</ActionButton>
+      <ActionButton aria-label="Add to cart" styleProduct onClick={addToCart}>ADD TO CART</ActionButton>
       {notifShown && (<Notification>Added to cart!</Notification>)}
     </CheckoutWrapper>
   )
