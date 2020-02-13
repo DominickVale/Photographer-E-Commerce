@@ -1,10 +1,10 @@
 import React from 'react'
 import App from 'next/app'
 import Head from 'next/head'
-
+import {AnimatePresence} from 'framer-motion'
 import {CartProvider} from 'components/Store'
 
-const MyApp = ({Component, pageProps}) => 
+const MyApp = ({Component, pageProps, router}) => 
   (
     <>
     <Head>
@@ -12,7 +12,9 @@ const MyApp = ({Component, pageProps}) =>
       <script src="https://js.stripe.com/v3/"></script>
     </Head>
     <CartProvider>
-      <Component {...pageProps}/>
+      <AnimatePresence exitBeforeEnter>
+        <Component {...pageProps} key={router.route}/>
+      </AnimatePresence>
     </CartProvider>
     </>
   )
