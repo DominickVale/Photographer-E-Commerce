@@ -1,4 +1,5 @@
 import React,{useState} from 'react'
+import Router from 'next/router'
 import Link from 'components/Link'
 
 import {NavContainer, NavBrand, NavHamContainer, NavLinks, NavRight, NavLink} from 'styles/layout/header'
@@ -21,8 +22,8 @@ const Header = (props) => {
       <NavLinks>
         {props.noLinks || (
           <>
-          <NavLink><Link href="/">about</Link></NavLink>
-          <NavLink><Link href="/">contact</Link></NavLink>
+          <NavLink><Link href="/about">about</Link></NavLink>
+          <NavLink><Link href="#footer">contact</Link></NavLink>
         </>
         )}
       </NavLinks>

@@ -39,6 +39,9 @@ app.prepare().then(() => {
     console.log('get checkout')
     return app.render(req, res, '/checkout', req.query)
   })
+  server.get('/about', (req, res) => {
+    return app.render(req, res, '/about', req.query)
+  })
   server.get('/:slug', (req, res) => {
     return app.render(req, res, '/', {slug: req.params.slug})
   })
