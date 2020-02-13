@@ -16,6 +16,7 @@ grid-template-areas:
   align-content: flex-start;
   justify-content: start;
   align-items: flex-start;
+  grid-column-gap: 2rem;
   grid-template-columns: 1fr 1fr;
   grid-template-areas:
   "title title"
@@ -32,36 +33,25 @@ grid-template-areas:
   justify-content: start;
   align-items: flex-start;
   grid-row-gap: 1rem;
-  grid-column-gap: 0;
-  grid-template-columns: 4fr 4fr 1fr 3fr 3fr;
+  grid-column-gap: 4vw;
+  grid-template-columns: 3fr 2fr 4vw;
   grid-template-areas:
-  "image image . title title"
-  "image image . checkout date"
-  "image image . checkout description"
-  "image image . . description"
+  "image title ."
+  "image title ."
+  "image date ."
+  "image description ."
+  "image checkout ."
 }
 `
 
 export const CheckoutWrapper = styled.section`
-margin: 2rem auto;
+margin: 2rem 0;
 grid-area: checkout;
 background-color: ${variables.bodyBGColor};
-display: grid;
-grid-row-gap: 0.5rem;
+display: flex;
+flex-direction: column;
 width: 100%;
-max-width: 18rem;
-align-content: center;
-justify-content: center;
-align-items: center;
-justify-items: center;
-grid-template-areas:
-"price price"
-"quantity quantity"
-"linebreak linebreak"
-". ."
-". ."
-". ."
-"action action";
+max-width: 70%;
 `
 
 export const CheckoutBreak = styled.hr`
@@ -77,9 +67,9 @@ color: ${variables.productTitleColor};
 user-select: none;
 position: relative;
 grid-area: price;
-font-size: 3rem;
-font-weight: 600;
-margin: 0 auto;
+font-size: 2.4rem;
+font-weight: 400;
+margin: 1rem 0;
 &::after{
   user-select: none;
   content: "$";
@@ -109,15 +99,13 @@ ${props => props.styleCart && css`
 export const QuantitySelectorWrapper = styled.div`
 background-color: ${variables.bodyBGColor};
 user-select: none;
-margin: 0.5rem auto;
+margin: 0.5rem auto 2rem 0;
 max-height: 2rem;
 padding: 0 1rem;
 width: 4rem;
 display: flex;
 justify-content: space-around;
 outline: 1px solid ${variables.quantityBorderColor};
-position: relative;
-left: 50%;
 `
 
 export const QuantitySelectorValue = styled.h5`

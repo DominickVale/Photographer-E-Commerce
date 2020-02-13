@@ -16,7 +16,7 @@ export default {
   menuBGColor: 'rgba(5, 2, 0, 1)',
   menuLinkColor: 'rgba(255,255,255, 0.5)',
   productTitleSize: 'calc(8vw + 1vh)',
-  productTitleSizeMaxMobile: '7rem',
+  productTitleSizeMaxMobile: 'calc(4rem + 3vh)',
   productTitleSizeDesktop: 'calc(5vw + 5vh)',
   footerBg: '#141414',
   footerFontColor: '#B5B5B5',

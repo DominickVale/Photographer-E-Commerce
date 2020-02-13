@@ -19,8 +19,11 @@ display: flex;
 flex-direction: column;
 align-content: center;
 margin: 0 auto;
+${props => props.styleProduct && css`
+margin: 0 auto 0 0;
+`}
 @media only screen and (min-width: 1140px){
-  margin: ${props => props.styleProduct ? 'auto': '0'};
+  margin: ${props => props.styleProduct ? '0 auto 0 0': '0'};
 }
 ${props => props.maxWidth && css`
 width: ${props.maxWidth};
@@ -67,6 +70,7 @@ p{
 ${props => props.styleProduct && css`
   font-size: 1.2rem;
   padding: 1.2rem 2.4rem;
+  margin: 0;
 `}
 `
 

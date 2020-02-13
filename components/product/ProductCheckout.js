@@ -48,13 +48,13 @@ const ProductCheckout = (props) => {
 
   return (
     <CheckoutWrapper>
+      <CheckoutBreak />
       <ProductPrice>{(cartItem.price*cartItem.quantity).toFixed(2)}</ProductPrice>
       <QuantitySelectorWrapper>
         <QuantityOperator onClick={() => updateQuantity('sub')}>−</QuantityOperator>
         <QuantitySelectorValue>{cartItem.quantity}</QuantitySelectorValue>
         <QuantityOperator onClick={() => updateQuantity('add')}>+</QuantityOperator>
       </QuantitySelectorWrapper>
-      <CheckoutBreak />
       <ActionButton styleProduct onClick={addToCart}>ADD TO CART</ActionButton>
       {notifShown && (<Notification>Added to cart!</Notification>)}
     </CheckoutWrapper>

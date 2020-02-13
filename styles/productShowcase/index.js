@@ -62,6 +62,12 @@ ${props => props.styleProduct && css`
   left: -1.2rem;
   top: -1.4rem;
   margin: 0;
+  ${props => props.styleProduct && css`
+  left: -0.4rem;
+  top: 0;
+  padding: 0;
+  font-size: calc(${variables.productTitleSizeMaxMobile} - 1rem);
+  `}
 }
 `
 
@@ -75,7 +81,6 @@ justify-content: center;
 position: relative;
 @media only screen and (min-width: 1140px) {
   max-width: 58vw;
-  left: 3vw;
   ${props => props.styleProduct && css`
   max-width: 60vw;
 `}
@@ -112,7 +117,7 @@ ${props => props.styleProduct && css`
   position: relative;
   align-self: center;
   margin: 0;
-  margin: 1.2rem auto auto auto;
+  margin: 1.5rem 0;
   transform: rotate(0);
   max-width: 10rem;
   right: 0;
@@ -125,7 +130,6 @@ ${props => props.styleProduct && css`
   }
   @media only screen and (min-width: 980px){
     margin-bottom: 0rem;
-    left: 2vw;
   }
 `}
 & strong{
@@ -142,6 +146,8 @@ margin: auto;
 ${props => props.styleProduct && css`
   text-align: left;
   margin-top: 1.4rem;
+  margin-left: 0;
+  font-size: 1rem;
   p{
     margin: 0;
   }
@@ -153,9 +159,9 @@ ${props => props.styleProduct && css`
   ${props => props.styleProduct && css`
     text-align: left;
     margin-top: 0rem;
+    font-size: 1.25rem;
     p{
       margin: 0;
-      margin-left: 10%;
     }
   `}
 }
