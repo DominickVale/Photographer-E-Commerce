@@ -32,7 +32,7 @@ const Cart = (props) => {
         </CartItemsContainer>
         <CartCheckoutWrapper>
           <CartCheckoutTotal>{getCartTotalAmount(cart) && ('$ ' + parseFloat(getCartTotalAmount(cart)).toFixed(2))}</CartCheckoutTotal>
-          <ActionButton styleProduct onClick={() => Router.push('/checkout')}>CHECKOUT</ActionButton>
+          <ActionButton styleProduct styleCart onClick={() => Router.push('/checkout')}>CHECKOUT</ActionButton>
         </CartCheckoutWrapper>
       </StyledCart>
     </StyledCartWrapper>
