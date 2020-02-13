@@ -1,5 +1,4 @@
 import React, {useEffect, useState} from 'react'
-import {motion} from 'framer-motion'
 
 import Layout from 'components/layout'
 import ProductShowcase from 'components/product/ProductShowcase'
@@ -24,9 +23,6 @@ const Home = (props) => {
 
 
   return (
-  <motion.div exit={{opacity: 0}}
-    initial={{opacity: 0}}
-    animate={{opacity: 1}}>
     <Layout title="Photographer E-commerce - Homepage"
       description="Fake photographer e-commerce website. Developed for learning."
       keywords="e-commerce, photographer, learning">
@@ -45,7 +41,6 @@ const Home = (props) => {
           />
       )})}
     </Layout>
-  </motion.div>
 )}
 
 export default Home

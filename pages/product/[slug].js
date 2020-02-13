@@ -1,6 +1,5 @@
 import React from 'react'
 import Layout from 'components/layout'
-import {motion} from 'framer-motion'
 
 import {ProductWrapper} from 'styles/product'
 import ProductTitle from 'components/product/ProductTitle'
@@ -15,21 +14,17 @@ import { fetchSingleProduct } from 'api'
 const Product = ({id, title, image, date, description, price}) => {
   
   return (
-    <motion.div exit={{opacity: 0}}
-      initial={{opacity: 0}}
-      animate={{opacity: 1}}>
-      <Layout title={`Photographer E-commerce - ${title}`}
-        description={description}
-        keywords="e-commerce, photographer, learning">
-        <ProductWrapper>
-          <ProductTitle styleProduct>{title}</ProductTitle>
-          <ProductImage styleProduct src={image} alt={title}/>
-          <ProductDate styleProduct date={date} caption="lorem ipsum"/>
-          <ProductDescription styleProduct>{description}</ ProductDescription>
-          <ProductCheckout id={id} image={image} title={title} price={price}/>
-        </ProductWrapper>
-      </Layout>
-    </motion.div>
+    <Layout title={`Photographer E-commerce - ${title}`}
+      description={description}
+      keywords="e-commerce, photographer, learning">
+      <ProductWrapper>
+        <ProductTitle styleProduct>{title}</ProductTitle>
+        <ProductImage styleProduct src={image} alt={title}/>
+        <ProductDate styleProduct date={date} caption="lorem ipsum"/>
+        <ProductDescription styleProduct>{description}</ ProductDescription>
+        <ProductCheckout id={id} image={image} title={title} price={price}/>
+      </ProductWrapper>
+    </Layout>
   )
 }
 

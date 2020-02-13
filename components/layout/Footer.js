@@ -6,7 +6,7 @@ import ContactDetailsList from '../ContactDetailsList'
 
 const Footer = () => {
   return (
-    <FooterContainer>
+    <FooterContainer id="footer">
       <FooterMain>
         <FooterHeading>Want to talk?</FooterHeading>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis, lectus magna fringiLorem ipsum  ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis, lectus magna fringilla urna, porttitor</p>

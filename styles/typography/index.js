@@ -9,9 +9,6 @@ font-size: ${variables.logoFontSize};
 font-weight: 900;
 color: ${variables.logoFontColor};
 transition: all 0.3s ease;
-&:hover{
-  transform: scale(1.3);
-}
 &:active{
   transform: scale(0.9);
 }

@@ -2,6 +2,7 @@ import React from 'react'
 import Head from 'next/head'
 import {Normalize} from 'styled-normalize'
 import {createGlobalStyle} from 'styled-components'
+import {motion} from 'framer-motion'
 
 import Header from './Header'
 import Footer from './Footer'
@@ -52,11 +53,15 @@ const Layout = (props) => {
       </Head>
       <Normalize />
       <GlobalStyle />
-      <Header noLinks={props.noLinks}/>
-      <Container>
-        {props.children}
-      </Container>
-      <Footer />
+      <motion.div exit={{opacity: 0}}
+        initial={{opacity: 0}}
+        animate={{opacity: 1}}>
+        <Header noLinks={props.noLinks}/>
+        <Container>
+          {props.children}
+        </Container>
+        <Footer />
+      </motion.div>
     </>
   )
 }
